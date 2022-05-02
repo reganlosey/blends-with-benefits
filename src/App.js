@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import fetchData from './apiCalls';
+import Homepage from './Components/Homepage/Homepage';
+import { useState, useEffect } from 'react';
 
-function App() {
+const App = () => {
+  const [brewData, setBrewData] = useState([]);
+
+  const getBrewsData = async () => {
+    const resp = await fetchData("https://brewedtoserve.herokuapp.com/brews")
+    console.log(resp)
+
+  }
+
+  useEffect(() => {
+    getBrewsData()
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <h1>Grind So Fine</h1>
+  )
+
 }
 
 export default App;
