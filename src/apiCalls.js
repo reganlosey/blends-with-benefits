@@ -7,9 +7,7 @@ const fetchData = async (url) => {
     }
   } catch (err) {
     throw new Error(err)
-  } finally {
-    console.log('done')
-  }
+  } 
 
 }
 
