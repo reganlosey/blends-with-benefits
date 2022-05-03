@@ -1,0 +1,23 @@
+.header{
+  outline: 3px solid red;
+  overflow:hidden;
+}
+
+.header-left{
+  float:left;
+}
+
+.header-right{
+  float:right;
+  outline: 2px solid magenta;
+  width: 60%;
+}
+
+.header-link {
+  text-decoration:none;
+  color: black;
+  &__profile{
+    float:right;
+  }
+
+}

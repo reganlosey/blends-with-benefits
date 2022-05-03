@@ -5,9 +5,6 @@ import {NavLink} from 'react-router-dom';
 const Homepage = () => {
   return (
     <div className="homepage">
-      <nav className="nav-bar">
-      <NavLink to="/">bwb</NavLink>
-      </nav>
       <section className="welcome-msg">
         <h1>Hey there, brew-tiful</h1>
         <h2>Welcome to Blends With Benefits</h2>
