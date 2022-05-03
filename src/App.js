@@ -2,6 +2,7 @@ import './App.scss';
 import fetchData from './apiCalls';
 import Homepage from './Components/Homepage/Homepage';
 import Header from './Components/Header/Header';
+import Shop from './Components/Shop/Shop';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/shop" element={<Shop allBrews={brewData} />} />
       </Routes>
     </div>
   )
