@@ -1,6 +1,5 @@
 import './Homepage.scss'
-import {NavLink} from 'react-router-dom';
-
+import { NavLink, Link } from 'react-router-dom';
 
 const Homepage = () => {
   return (
@@ -15,6 +14,9 @@ const Homepage = () => {
           But don't worry, we're here to help you to find your one and only.
         </p>
       </section>
+      <div className="get-started">
+        <Link to="/shop">Browse All Brews</Link>
+      </div>
     </div>
   )
 
