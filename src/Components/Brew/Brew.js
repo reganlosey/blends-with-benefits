@@ -10,7 +10,6 @@ const Brew = ({ id, productName, type, price, hasCaffeine }) => {
       <p className="brew-info__caffeine">{hasCaffeine ? "Caffeinated: Yes" : "Caffeinated: No"} </p>
     </article>
   )
-
 }
 
 export default Brew;
