@@ -10,6 +10,17 @@
   justify-content:center;
   padding: 1.5rem;
   word-wrap:break-word;
+  &__coffee{
+    background-image: url('https://images.unsplash.com/photo-1585349048087-e7363ae659ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+    background-size:cover;
+    background-position: center;
+  }
+  &__tea{
+    background-image: url('https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');
+    background-size:cover;
+    background-position: center;
+
+  }
 }
 
 

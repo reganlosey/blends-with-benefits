@@ -2,7 +2,7 @@ import './Brew.scss'
 
 const Brew = ({ id, productName, type, price, hasCaffeine }) => {
   return (
-    <article className="brew-card">
+    <article className={type === 'Tea' ? "brew-card__tea" : "brew-card__coffee"}>
       <p className="brew-info__name">{productName}</p>
       <p className="brew-info__type">{type}</p>
       <p className="brew-info__price">Price: ${price}</p>
