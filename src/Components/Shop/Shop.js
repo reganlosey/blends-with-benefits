@@ -16,7 +16,6 @@ const Shop = ({ allBrews }) => {
     if (reqParams.includes(brew.type.toLowerCase()) && !arr.includes(brewCard)) {
       arr.push(brewCard)
     } else if (!params.query && !arr.includes(brewCard)) {
-      console.log('no params')
       arr.push(brewCard)
     }
     return arr
