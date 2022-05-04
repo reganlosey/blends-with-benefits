@@ -11,8 +11,10 @@
   display: grid;
   margin: 0 auto;
   grid-gap: 2rem;
-  grid-template-columns: repeat(3, minmax(15em, 20em));
-  grid-template-rows: repeat(10, minmax(15em, 15em));
+  grid-template-columns: repeat(3, minmax(max-content, 25em));
+  // grid-template-rows: max-content;
+  grid-auto-rows:minmax(max-content, 25em);
+  // grid-template-rows: (minmax(max-content, 25em));
 }
 
 @media screen and (max-width: 900px) {
