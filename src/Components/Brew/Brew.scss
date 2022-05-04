@@ -1,17 +1,43 @@
-.brew-card{
+@use '../../sass/variables.scss'as *;
+
+
+.brew-card {
   outline: 2px solid white;
-  display:flex;
+  background-color: $secondary-color;
+  border-radius: 10px;
+  display: flex;
   flex-flow: column wrap;
-  align-items: center;
-  justify-content:center;
+  justify-content: center;
   padding: 1.5rem;
-  // max-width: 15em;
-}
+  word-wrap: break-word;
 
-.brew-info {
-
-  &__name{
-    font-size: 2.155rem;
+  &--coffee {
+    background-image: url('https://images.unsplash.com/photo-1585349048087-e7363ae659ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+    background-size: cover;
+    background-position: center;
   }
 
+  &--tea {
+    background-image: url('https://images.unsplash.com/photo-1498604636225-6b87a314baa0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80');
+    background-size: cover;
+    background-position: center;
+    color: black;
+    font-weight: bold;
+  }
+
+  &--cart-btn{
+    align-self:center;
+    padding: .5rem 1rem;
+    
+  }
+}
+
+
+.brew-info {
+  text-align: left;
+
+  &__name {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
