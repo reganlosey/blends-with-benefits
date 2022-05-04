@@ -1,17 +1,16 @@
 .shop {
   border: 2px solid magenta;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   // justify-content: center;
   // align-items: stretch;
 }
 
 .brew-cards {
-  outline: 2px solid rgb(17, 202, 144);
+  padding: 1rem 0;
   display: grid;
   margin: 0 auto;
   grid-gap: 2rem;
-  // grid-template-rows: repeat(auto, minmax(75%, auto));
   grid-template-columns: repeat(3, minmax(200px, 1fr));
 
 }
