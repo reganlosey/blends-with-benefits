@@ -1,6 +1,9 @@
+@use '../../sass/variables'as *;
+
 .shop {
   border: 2px solid magenta;
   display: flex;
+  flex-direction:column;
 }
 
 .brew-cards {
@@ -9,12 +12,11 @@
   margin: 0 auto;
   grid-gap: 2rem;
   grid-template-columns: repeat(3, minmax(15em, 20em));
-  grid-template-rows: repeat(auto-fit, minmax(10em, auto));
-
+  grid-template-rows: repeat(10, minmax(15em, 15em));
 }
 
 @media screen and (max-width: 900px) {
   .brew-cards {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }

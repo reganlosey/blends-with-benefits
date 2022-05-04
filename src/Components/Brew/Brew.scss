@@ -1,17 +1,23 @@
+@use '../../sass/variables.scss' as *;
+
+
 .brew-card{
   outline: 2px solid white;
+  background-color: $secondary-color;
+  border-radius: 5px;
   display:flex;
   flex-flow: column wrap;
-  align-items: center;
   justify-content:center;
   padding: 1.5rem;
   word-wrap:break-word;
 }
 
+
 .brew-info {
+  text-align:left;
 
   &__name{
     font-size: 1.5rem;
+    text-align:center;
   }
-
 }
