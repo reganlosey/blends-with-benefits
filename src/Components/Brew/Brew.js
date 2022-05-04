@@ -1,7 +1,6 @@
 import './Brew.scss'
 
 const Brew = ({ id, productName, type, price, hasCaffeine }) => {
-  console.log(productName)
   return (
     <article className="brew-card">
       <p className="brew-info__name">{productName}</p>

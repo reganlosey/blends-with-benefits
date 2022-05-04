@@ -3,7 +3,8 @@ import Brew from '../Brew/Brew';
 import { useParams } from 'react-router-dom';
 
 const Shop = ({ allBrews }) => {
-  const params = useParams().query === 'coffee' ? ['espresso', 'coffee'] : 'tea';
+  const params = useParams()
+  const reqParams = useParams().query === 'coffee' ? ['espresso', 'coffee'] : 'tea';
   const brewCards = allBrews.reduce((arr, brew) => {
     let brewCard = <Brew
       id={brew.id}
@@ -12,9 +13,10 @@ const Shop = ({ allBrews }) => {
       type={brew.type}
       price={brew.price}
       hasCaffeine={brew.hasCaffeine} />
-    if (params.includes(brew.type.toLowerCase()) && !arr.includes(brewCard)) {
+    if (reqParams.includes(brew.type.toLowerCase()) && !arr.includes(brewCard)) {
       arr.push(brewCard)
-    } else if (!params && !arr.includes(brewCard)) {
+    } else if (!params.query && !arr.includes(brewCard)) {
+      console.log('no params')
       arr.push(brewCard)
     }
     return arr
