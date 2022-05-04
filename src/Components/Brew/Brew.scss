@@ -1,34 +1,38 @@
-@use '../../sass/variables.scss' as *;
+@use '../../sass/variables.scss'as *;
 
 
-.brew-card{
+.brew-card {
   outline: 2px solid white;
   background-color: $secondary-color;
-  border-radius: 5px;
-  display:flex;
+  border-radius: 10px;
+  display: flex;
   flex-flow: column wrap;
-  justify-content:center;
+  justify-content: center;
   padding: 1.5rem;
-  word-wrap:break-word;
-  &__coffee{
+  word-wrap: break-word;
+
+  &--coffee {
     background-image: url('https://images.unsplash.com/photo-1585349048087-e7363ae659ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
-    background-size:cover;
+    background-size: cover;
     background-position: center;
   }
-  &__tea{
-    background-image: url('https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');
-    background-size:cover;
+
+  &--tea {
+    background-image: url('https://images.unsplash.com/photo-1498604636225-6b87a314baa0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80');
+    background-size: cover;
     background-position: center;
+    color: black;
+    font-weight: bold;
 
   }
 }
 
 
 .brew-info {
-  text-align:left;
+  text-align: left;
 
-  &__name{
+  &__name {
     font-size: 1.5rem;
-    text-align:center;
+    text-align: center;
   }
 }
