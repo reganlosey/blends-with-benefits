@@ -1,0 +1,37 @@
+.cart {
+  outline: 2px solid red;
+  display: flex;
+  height: 95vh;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cart-card {
+  width: 75%;
+  height: 85%;
+  border-radius: 10px;
+  outline: 2px solid white;
+  background-color: white;
+
+  &__cart-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items:center;
+    color:black;
+    padding:0 1rem;
+  }
+}
+
+.cart-info {
+  &--heading {
+    margin:0 auto;
+    font-size: 2rem;
+  }
+
+  &--action {
+    text-align: right;
+  }
+}
