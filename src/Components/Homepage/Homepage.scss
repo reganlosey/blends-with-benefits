@@ -1,8 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
 .homepage {
-  outline: 2px solid red;
+  display: flex;
+  flex-flow: column wrap;
   height: 100%;
 }
 
-.welcome-msg {
+.intro {
+
+  letter-spacing: 2px;
   text-align: center;
+
+  &--site-name {
+    font-family: 'Shrikhand', cursive;
+    font-size: 4.5rem;
+    font-style: italic;
+    text-shadow: -1px 1px 1px #637e7e,
+      -2px 2px 1px #637e7e,
+      -3px 3px 1px #637e7e,
+      -4px 4px 1px #637e7e,
+      -5px 5px 1px #637e7e,
+      -6px 6px 1px #637e7e,
+      -7px 8px 1px #637e7e;
+  }
+}
+
+.get-started{
+  outline:1px solid white;
+  display:flex;
+  flex-flow:column wrap;
+  justify-content:center;
+  align-items:center;
 }
