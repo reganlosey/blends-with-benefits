@@ -1,17 +1,19 @@
 import './Header.scss'
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header className="header">
-      <div className="header-left">
-        <NavLink to="/" className="header-link__home">BWB</NavLink>
+      <div className="header header__left">
+        <Link to="/" className="header-link header-link--home">BWB</Link>
       </div>
-      <div className="header-right">
-        <Link to="/shop" className="header-link__shop">Shop All Brews</Link>
-        <Link to="/shop/coffee" className="header-link__coffee">Shop Coffee</Link>
-        <Link to="/shop/tea" className="header-link__tea">Shop Tea</Link>
-        <Link to="/profile" className="header-link__profile">Your Profile</Link>
+      <div className="header header__center">
+        <Link to="/shop" className="header-link header-link--shop">All Brews</Link>
+        <Link to="/shop/coffee" className="header-link header-link--coffee">Coffee</Link>
+        <Link to="/shop/tea" className="header-link header-link--tea">Tea</Link>
+      </div>
+      <div className="header header__right">
+        <Link to="/profile" className="header-link header-link--profile">Your Profile</Link>
       </div>
     </header>
   )
