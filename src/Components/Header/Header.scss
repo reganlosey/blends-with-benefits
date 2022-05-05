@@ -1,25 +1,40 @@
 .header {
-  outline: 3px solid red;
-  overflow: hidden;
+  // outline: 3px solid red;
   font-size: 1.1rem;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header-left {
+.header__left {
   float: left;
 }
 
-.header-right {
+.header__right {
+  // outline: 3px solid magenta;
   float: right;
-  outline: 2px solid magenta;
-  width: 60%;
+}
+
+.header__center {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 0 1rem;
+  width: 50%;
 }
 
 .header-link {
   text-decoration: none;
-  color: black;
+  color: white;
 
-  &__profile {
-    float: right;
+  &--profile {
+    // align-self: flex-end;
   }
 
+  &--tea,
+  &--coffee,
+  &--shop {
+    text-align: center;
+  }
 }
