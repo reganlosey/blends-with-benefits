@@ -13,6 +13,7 @@ const Shop = ({ allBrews, addToCart }) => {
       type={brew.type}
       price={brew.price}
       hasCaffeine={brew.hasCaffeine}
+      quantity={brew.quantity}
       addToCart={addToCart}
       />
     if (reqParams.includes(brew.type.toLowerCase()) && !arr.includes(brewCard)) {

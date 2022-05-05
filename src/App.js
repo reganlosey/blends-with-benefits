@@ -21,11 +21,16 @@ const App = () => {
   }, [])
 
   const addToCart = (id) => {
-    const itemToAdd = brewData.forEach((brew) => {
-      if (parseInt(brew.id) === id) {
+    const clickedBrew = brewData.forEach((brew) => {
+      if (brew.id === id && !cartItems.includes(brew)) {
+        brew.quantity = 1
         setCartItems([...cartItems, brew])
       }
+      else if (brew.id === id && cartItems.includes(brew)) {
+        brew.quantity +=1
+      }
     })
+    return clickedBrew
   }
 
   return (
