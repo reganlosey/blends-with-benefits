@@ -25,24 +25,20 @@
 
 
 .cart-content-container {
-  outline: 4px solid magenta;
+  outline: 1px solid magenta;
   height: 65%;
   max-height: 65%;
   overflow: scroll;
 }
 
 .cart-content {
-  // outline: 5px solid rgb(0, 98, 255);
-  outline: 2px solid darkorange;
   display: flex;
-  justify-content: space-between;
+  flex-flow: row wrap;
   align-items: center;
+  justify-content: space-between;
   padding: 0 1rem;
-  &--icon-container{
-    outline:3px solid dodgerblue;
-  }
-  &--item-icon{
-    outline: 2px solid red;
+
+  &--item-icon {
     max-height: 3rem;
     max-width: 3rem;
   }
@@ -52,16 +48,21 @@
 .item-details {
   display: flex;
   flex-flow: column wrap;
+  align-items: flex-start;
+  width: 25%;
+  max-width: 30%;
+  padding: 0 .5rem;
 
-  &--item-name{
-    text-decoration:underline;
+  &--item-name {
+    text-decoration: underline;
   }
 }
 
 .cart-counter {
-  display:flex;
-  justify-content:center;
-  align-content:center;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  width:10%;
 }
 
 

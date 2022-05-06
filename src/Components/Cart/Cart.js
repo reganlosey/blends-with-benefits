@@ -57,23 +57,18 @@ const Cart = ({ cartItems }) => {
       <div
         key={item.id}
         className="cart-content">
-        <div className="cart-content--icon-container">
         <img className="cart-content--item-icon"src={item.type === "Tea" ? teaBagIcon : beansIcon}/>
-        </div>
         <div className="item-details">
-          ITEM DETAILS
           <p className="item-details--item-name">{item.productName}</p>
           <p className="item-details--item-type">{item.type}</p>
           <p className="item-details--item-pounds">${item.price}/lb</p>
         </div>
         <div className="cart-counter">
-          CART COUNTER
           <button className="cart-counter--increase-btn" onClick={(e) => adjustQuantity(e, item.id)}>+</button>
           <p className="cart-counter--num-items">{item.quantity}</p>
           <button className="cart-counter--decrease-btn" onClick={(e) => adjustQuantity(e, item.id)}>-</button>
         </div>
         <div className="cart-prices">
-          CART PRICES
           <p className="cart-prices--item-price">${item.price * item.quantity}</p>
         </div>
       </div>
