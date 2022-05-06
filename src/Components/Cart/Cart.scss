@@ -24,30 +24,36 @@
     align-items: center;
     color: black;
     padding: 0 1rem;
+    outline: 2px solid rebeccapurple;
   }
 }
 
-.cart-info {
+.cart-header {
   &--heading {
     // margin: 0 auto;
     font-size: 2rem;
   }
 
-  &--action {
+  &--action {}
+}
 
-  }
+.cart-content-container {
+  outline: 4px solid magenta;
+  max-height:65%;
+  overflow:scroll;
 }
 
 .cart-content {
-  outline: 2px solid red;
-  display:flex;
+  // outline: 5px solid rgb(0, 98, 255);
+  display: flex;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .item-details {
   outline: 2px solid dodgerblue;
-  margin-right:auto;
+  margin-right: auto;
 }
 
 .cart-counter {
@@ -55,7 +61,8 @@
   margin: 0 auto;
 }
 
-.cart-prices {
-  outline: 2px solid mediumspringgreen;
-  margin-left:auto;
+
+.cart-totals {
+  outline: 3px solid red;
+  margin-top: 0 auto;
 }

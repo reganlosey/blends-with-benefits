@@ -44,6 +44,9 @@ const App = () => {
       } else if (e.target.className.includes('decrease') && quantity > 0 && matchedBrew) {
         brew.quantity--
         setQuantity(brew.quantity)
+      } else if(e.target.className.includes('remove') && matchedBrew){
+        brew.quantity = 0;
+        setQuantity(brew.quantity)
       }
     })
     return adjustment

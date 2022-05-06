@@ -57,29 +57,21 @@ const Cart = ({ cartItems, adjustQuantity }) => {
     <div className="cart">
       <div className="cart-card">
         <div className="cart-card__cart-header">
-          <h3 className="cart-info--heading">Your Cart</h3>
-          <h4 className="cart-info--action">Remove All</h4>
+          CART HEADER
+          <h3 className="cart-header--heading">Your Cart</h3>
+          <h4 className="cart-header--action">${cartTotals + (cartTotals * 0.08)}</h4>
         </div>
-        {/* <div className="cart-content">
-          <div className="cart-content--item-image"></div>
-          <img />
-          <div className="item-details">
-            ITEM DETAILS
-            <p className="item-details--item-name">Coffee</p>
-            <p className="item-details--item-pounds">2lbs</p>
-          </div>
-          <div className="cart-counter">
-            CART COUNTER
-            <button className="cart-counter--increase-btn">+</button>
-            <button className="cart-counter--decrease-btn">-</button>
-          </div>
-          <div className="cart-prices">
-            CART PRICES
-            <p className="cart-prices--item-price">$10/lb</p>
-            <button className="cart-prices--remove-item">Remove</button>
-          </div>
-        </div> */}
-        {allItems}
+        <div className="cart-content-container">
+          {cartItems.length ? allItems : <p>Looks like your cart needs a refill...</p>}
+        </div>
+        <div className="cart-totals">
+          CART TOTALS
+          <p className="cart-totals--subtotal">Subtotal:</p>
+          <p className="cart-totals--tax">Tax</p>
+          <p className="cart-totals--shipping">Shipping</p>
+          <p className="cart-totals--final-total">Total:</p>
+
+        </div>
       </div>
     </div>
   )
