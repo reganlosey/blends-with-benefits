@@ -37,11 +37,11 @@ const App = () => {
   const adjustQuantity = (e, id) => {
     const adjustment = cartItems.forEach((brew) => {
       const matchedBrew = brew.id === id
-      if(e.target.className.includes('increase') && quantity >=0 && matchedBrew){
+      if (e.target.className.includes('increase') && matchedBrew) {
         console.log('increase>>', id)
         brew.quantity++
         setQuantity(brew.quantity)
-      } else if (e.target.className.includes('decrease') && quantity >=0 && matchedBrew){
+      } else if (e.target.className.includes('decrease') && quantity > 0 && matchedBrew) {
         brew.quantity--
         setQuantity(brew.quantity)
       }

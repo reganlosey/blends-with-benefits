@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 
 const Cart = ({ cartItems, adjustQuantity }) => {
   const [cartTotals, setCartTotals] = useState(0);
-  const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     calculateTotals()
@@ -38,7 +37,7 @@ const Cart = ({ cartItems, adjustQuantity }) => {
           ITEM DETAILS
           <p className="item-details--item-name">{item.productName}</p>
           <p className="item-details--item-type">{item.type}</p>
-          <p className="item-details--item-pounds">{item.quantity}</p>
+          <p className="item-details--item-pounds">${item.price}/lb</p>
         </div>
         <div className="cart-counter">
           CART COUNTER
