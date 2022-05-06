@@ -1,13 +1,31 @@
 import './Cart.scss'
 import { useState, useEffect } from 'react';
 
-const Cart = ({ cartItems }) => {
-  console.log(cartItems)
-  const [subTotal, setSubtotal] = useState('');
 
-  // const calculateTotals = cartItems.reduce((item) => {
+const Cart = ({ cartItems, adjustQuantity }) => {
+  const [cartTotals, setCartTotals] = useState(0);
+  const [quantity, setQuantity] = useState(0);
 
-  // })
+  useEffect(() => {
+    calculateTotals()
+  }, [])
+
+  // const adjustQuantity = (e) => {
+  //   e.preventDefault()
+  //   cartItems.find((item) => {
+  //     if (e.target.className.includes('increase')){
+  //       item.quantity++
+  //     }
+  //   })
+  // }
+
+  const calculateTotals = () => {
+    const totals = cartItems.reduce((sum, item) => {
+      sum += (item.price * item.quantity)
+      return sum
+    }, 0)
+    setCartTotals(totals)
+  }
 
   const allItems = cartItems.map((item) => {
     return (
@@ -24,12 +42,13 @@ const Cart = ({ cartItems }) => {
         </div>
         <div className="cart-counter">
           CART COUNTER
-          <button className="cart-counter--increase-btn">+</button>
-          <button className="cart-counter--decrease-btn">-</button>
+          <button className="cart-counter--increase-btn" onClick={(e) => adjustQuantity(e, item.id)}>+</button>
+          <p className="cart-counter--num-items">{item.quantity}</p>
+          <button className="cart-counter--decrease-btn" onClick={(e) => adjustQuantity(e, item.id)}>-</button>
         </div>
         <div className="cart-prices">
           CART PRICES
-          <p className="cart-prices--item-price">$10/lb</p>
+          <p className="cart-prices--item-price">${item.price * item.quantity}</p>
           <button className="cart-prices--remove-item">Remove</button>
         </div>
       </div>
