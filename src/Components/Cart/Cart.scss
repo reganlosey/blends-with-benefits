@@ -18,48 +18,48 @@
   color: black;
 
   &__cart-header {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    color: black;
-    padding: 0 1rem;
-    outline: 2px solid rebeccapurple;
+    text-align: center;
+    font-size: 1.55rem;
   }
 }
 
-.cart-header {
-  &--heading {
-    // margin: 0 auto;
-    font-size: 2rem;
-  }
-
-  &--action {}
-}
 
 .cart-content-container {
   outline: 4px solid magenta;
-  height:65%;
-  max-height:65%;
-  overflow:scroll;
+  height: 65%;
+  max-height: 65%;
+  overflow: scroll;
 }
 
 .cart-content {
   // outline: 5px solid rgb(0, 98, 255);
+  outline: 2px solid darkorange;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-
 }
 
+
 .item-details {
+  display: flex;
+  flex-flow: column wrap;
   outline: 2px solid dodgerblue;
-  margin-right: auto;
+
+  &--item-icon {
+    width: 10%;
+    height: auto;
+  }
+
+  &--item-name{
+    text-decoration:underline;
+  }
 }
 
 .cart-counter {
   outline: 2px solid magenta;
-  margin: 0 auto;
+  display:flex;
+  justify-content:center;
+  align-content:center;
 }
 
 

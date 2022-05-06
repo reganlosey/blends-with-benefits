@@ -1,5 +1,7 @@
 import './Cart.scss'
 import { useState, useEffect } from 'react';
+import beansIcon from '../../assets/beans_icon.png';
+import teaBagIcon from '../../assets/teabag_icon.png';
 
 
 const Cart = ({ cartItems }) => {
@@ -55,22 +57,18 @@ const Cart = ({ cartItems }) => {
       <div
         key={item.id}
         className="cart-content">
-        <div className="cart-content--item-image"></div>
-        <img />
         <div className="item-details">
-          ITEM DETAILS
-          <p className="item-details--item-name">{item.productName}</p>
-          <p className="item-details--item-type">{item.type}</p>
+          
+          <p className="item-details--item-name">{item.productName} </p>
+          <img className="item-details--item-icon" src={item.type === "Tea" ? teaBagIcon : beansIcon} />
           <p className="item-details--item-pounds">${item.price}/lb</p>
         </div>
         <div className="cart-counter">
-          CART COUNTER
           <button className="cart-counter--increase-btn" onClick={(e) => adjustQuantity(e, item.id)}>+</button>
           <p className="cart-counter--num-items">{item.quantity}</p>
           <button className="cart-counter--decrease-btn" onClick={(e) => adjustQuantity(e, item.id)}>-</button>
         </div>
         <div className="cart-prices">
-          CART PRICES
           <p className="cart-prices--item-price">${item.price * item.quantity}</p>
         </div>
       </div>
@@ -79,10 +77,9 @@ const Cart = ({ cartItems }) => {
   return (
     <div className="cart">
       <div className="cart-card">
-        <div className="cart-card__cart-header">
-          CART HEADER
-          <h3 className="cart-header--heading">Your Cart</h3>
-        </div>
+        <h3 className="cart-card__cart-header">
+          Your Cart
+        </h3>
         <div className="cart-content-container">
           {cartItems.length ? allItems : <p>Looks like your cart needs a refill...</p>}
         </div>
