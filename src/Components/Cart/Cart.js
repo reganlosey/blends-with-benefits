@@ -6,25 +6,33 @@ const Cart = ({ cartItems }) => {
   const [subTotal, setSubTotal] = useState(0);
   const [shippingCost, setShippingCost] = useState(0);
 
+  let dollarUS = Intl.NumberFormat('en-US', {
+    style:"currency",
+    currency:"USD",
+    minimumFractionDigits: 3,
+    maximumSignificantDigits: 6
+  })
+
+const formatPrice = (price) => {
+  return price.toLocaleString('en-US', {
+    style:"currency",
+    currency:"USD"
+  })
+}
+
 
   useEffect(() => {
     calculateTotals()
   }, [])
 
-  // const updateSubTotals = previousSubTotal.current.forEach((item) => {
-  //   if (item.quantity !== item.quantity){
-  //     console.log('hmmmmm')
-  //   }
-  // })
-
-  
   const calculateTotals = () => {
     const totals = cartItems.reduce((sum, item) => {
       sum += (item.price * item.quantity)
       return sum
     }, 0)
+
     setSubTotal(totals)
-    if (totals && totals > 20) {
+    if (totals > 0 && totals < 20) {
       setShippingCost(5)
     } else {
       setShippingCost(0)
@@ -91,10 +99,10 @@ const Cart = ({ cartItems }) => {
           {cartItems.length ? allItems : <p>Looks like your cart needs a refill...</p>}
         </div>
         <div className="cart-footer">
-          <p className="cart-totals--subtotal">Subtotal: ${subTotal}</p>
-          <p className="cart-totals--tax">Tax: ${subTotal * .08}</p>
-          <p className="cart-totals--shipping">Shipping: ${shippingCost}</p>
-          <p className="cart-totals--final-total">Total: ${subTotal + (subTotal * 0.08) + shippingCost}</p>
+          <p className="cart-totals--subtotal">Subtotal: {formatPrice(subTotal)}</p>
+          <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
+          <p className="cart-totals--shipping">Shipping: { shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
+          <p className="cart-totals--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
 
         </div>
       </div>
