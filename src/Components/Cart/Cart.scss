@@ -37,18 +37,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
+  &--icon-container{
+    outline:3px solid dodgerblue;
+  }
+  &--item-icon{
+    outline: 2px solid red;
+    max-height: 3rem;
+    max-width: 3rem;
+  }
 }
 
 
 .item-details {
   display: flex;
   flex-flow: column wrap;
-  outline: 2px solid dodgerblue;
-
-  &--item-icon {
-    width: 10%;
-    height: auto;
-  }
 
   &--item-name{
     text-decoration:underline;
@@ -56,7 +59,6 @@
 }
 
 .cart-counter {
-  outline: 2px solid magenta;
   display:flex;
   justify-content:center;
   align-content:center;
