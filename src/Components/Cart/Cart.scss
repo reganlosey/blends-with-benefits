@@ -39,6 +39,7 @@
 
 .cart-content-container {
   outline: 4px solid magenta;
+  height:65%;
   max-height:65%;
   overflow:scroll;
 }
@@ -62,7 +63,7 @@
 }
 
 
-.cart-totals {
+.cart-footer {
   outline: 3px solid red;
-  margin-top: 0 auto;
+  max-height: 25%;
 }

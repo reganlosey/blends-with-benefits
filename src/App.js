@@ -34,23 +34,23 @@ const App = () => {
     return clickedBrew
   }
 
-  const adjustQuantity = (e, id) => {
-    const adjustment = cartItems.forEach((brew) => {
-      const matchedBrew = brew.id === id
-      if (e.target.className.includes('increase') && matchedBrew) {
-        console.log('increase>>', id)
-        brew.quantity++
-        setQuantity(brew.quantity)
-      } else if (e.target.className.includes('decrease') && quantity > 0 && matchedBrew) {
-        brew.quantity--
-        setQuantity(brew.quantity)
-      } else if(e.target.className.includes('remove') && matchedBrew){
-        brew.quantity = 0;
-        setQuantity(brew.quantity)
-      }
-    })
-    return adjustment
-  }
+
+  // const adjustQuantity = (e, id) => {
+  //   const adjustment = cartItems.forEach((brew) => {
+  //     const matchedBrew = brew.id === id
+  //     if (e.target.className.includes('increase') && matchedBrew) {
+  //       console.log('increase>>', id)
+  //       brew.quantity++
+  //       setQuantity(brew.quantity)
+  //     } else if (e.target.className.includes('decrease') && quantity > 0 && matchedBrew) {
+  //       brew.quantity--
+  //       setQuantity(brew.quantity)
+  //     } else if(e.target.className.includes('remove') && matchedBrew){
+  //       brew.quantity = 0;
+  //       setQuantity(brew.quantity)
+  //     }
+  //   })
+  // }
 
   return (
     <div>
@@ -59,7 +59,7 @@ const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<Shop allBrews={brewData} addToCart={addToCart} />} />
         <Route path="/shop/:query" element={<Shop allBrews={brewData} addToCart={addToCart} />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} adjustQuantity={adjustQuantity} />} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} />} />
       </Routes>
     </div>
   )
