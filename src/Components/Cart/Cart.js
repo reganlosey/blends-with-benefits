@@ -1,24 +1,17 @@
 import './Cart.scss'
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const Cart = ({ cartItems }) => {
   const [subTotal, setSubTotal] = useState(0);
   const [shippingCost, setShippingCost] = useState(0);
 
-  let dollarUS = Intl.NumberFormat('en-US', {
-    style:"currency",
-    currency:"USD",
-    minimumFractionDigits: 3,
-    maximumSignificantDigits: 6
-  })
-
-const formatPrice = (price) => {
-  return price.toLocaleString('en-US', {
-    style:"currency",
-    currency:"USD"
-  })
-}
+  const formatPrice = (price) => {
+    return price.toLocaleString('en-US', {
+      style: "currency",
+      currency: "USD"
+    })
+  }
 
 
   useEffect(() => {
@@ -48,16 +41,14 @@ const formatPrice = (price) => {
         console.log('increase>>', id)
         brew.quantity++
         calculateTotals()
-      } else if (e.target.className.includes('decrease') && brew.quantity >0 && matchedBrew) {
+      } else if (e.target.className.includes('decrease') && brew.quantity > 0 && matchedBrew) {
         brew.quantity--
         calculateTotals()
-      } else if(e.target.className.includes('remove') && matchedBrew){
+      } else if (e.target.className.includes('remove') && matchedBrew) {
         brew.quantity = 0;
       }
     })
   }
-
-
 
   const allItems = cartItems.map((item) => {
     return (
@@ -77,12 +68,10 @@ const formatPrice = (price) => {
           <button className="cart-counter--increase-btn" onClick={(e) => adjustQuantity(e, item.id)}>+</button>
           <p className="cart-counter--num-items">{item.quantity}</p>
           <button className="cart-counter--decrease-btn" onClick={(e) => adjustQuantity(e, item.id)}>-</button>
-          <button onClick={() => calculateTotals()}>CLICK ME!</button>
         </div>
         <div className="cart-prices">
           CART PRICES
           <p className="cart-prices--item-price">${item.price * item.quantity}</p>
-          <button className="cart-prices--remove-item">Remove</button>
         </div>
       </div>
     )
@@ -93,7 +82,6 @@ const formatPrice = (price) => {
         <div className="cart-card__cart-header">
           CART HEADER
           <h3 className="cart-header--heading">Your Cart</h3>
-          <h4 className="cart-header--action">${subTotal + (subTotal * 0.08)}</h4>
         </div>
         <div className="cart-content-container">
           {cartItems.length ? allItems : <p>Looks like your cart needs a refill...</p>}
@@ -101,7 +89,7 @@ const formatPrice = (price) => {
         <div className="cart-footer">
           <p className="cart-totals--subtotal">Subtotal: {formatPrice(subTotal)}</p>
           <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
-          <p className="cart-totals--shipping">Shipping: { shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
+          <p className="cart-totals--shipping">Shipping: {shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
           <p className="cart-totals--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
 
         </div>
