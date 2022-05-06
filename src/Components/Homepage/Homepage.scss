@@ -1,3 +1,4 @@
+@use '../../sass/variables.scss' as *;
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
@@ -13,7 +14,7 @@
   text-align: center;
 
   &--site-name {
-    font-family: 'Shrikhand', cursive;
+    font-family: $primary-font;
     font-size: 4.5rem;
     font-style: italic;
     text-shadow: -1px 1px 1px #637e7e,

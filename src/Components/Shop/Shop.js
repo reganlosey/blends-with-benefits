@@ -2,7 +2,7 @@ import './Shop.scss';
 import Brew from '../Brew/Brew';
 import { useParams } from 'react-router-dom';
 
-const Shop = ({ allBrews }) => {
+const Shop = ({ allBrews, addToCart }) => {
   const params = useParams()
   const reqParams = useParams().query === 'coffee' ? ['espresso', 'coffee'] : 'tea';
   const brewCards = allBrews.reduce((arr, brew) => {
@@ -12,7 +12,10 @@ const Shop = ({ allBrews }) => {
       productName={brew.productName}
       type={brew.type}
       price={brew.price}
-      hasCaffeine={brew.hasCaffeine} />
+      hasCaffeine={brew.hasCaffeine}
+      quantity={brew.quantity}
+      addToCart={addToCart}
+      />
     if (reqParams.includes(brew.type.toLowerCase()) && !arr.includes(brewCard)) {
       arr.push(brewCard)
     } else if (!params.query && !arr.includes(brewCard)) {
