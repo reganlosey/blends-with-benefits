@@ -57,7 +57,7 @@ const Cart = ({ cartItems }) => {
       <div
         key={item.id}
         className="cart-content">
-        <img className="cart-content--item-icon"src={item.type === "Tea" ? teaBagIcon : beansIcon}/>
+        <img className="cart-content--item-icon" src={item.type === "Tea" ? teaBagIcon : beansIcon} />
         <div className="item-details">
           <p className="item-details--item-name">{item.productName}</p>
           <p className="item-details--item-type">{item.type}</p>

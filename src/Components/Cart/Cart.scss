@@ -52,6 +52,7 @@
   width: 25%;
   max-width: 30%;
   padding: 0 .5rem;
+  outline: 2px solid dodgerblue;
 
   &--item-name {
     text-decoration: underline;
@@ -62,7 +63,28 @@
   display: flex;
   justify-content: space-around;
   align-content: center;
-  width:10%;
+  min-width: 15%;
+  outline: 2px solid red;
+
+  &--increase-btn {
+    width: 2rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &--decrease-btn {
+    width: 2rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.cart-prices {
+  outline: 2px solid rebeccapurple;
+  width: 5%;
+  text-align: center;
 }
 
 
