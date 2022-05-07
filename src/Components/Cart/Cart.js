@@ -1,5 +1,7 @@
 import './Cart.scss'
 import { useState, useEffect } from 'react';
+import beansIcon from '../../assets/beans_icon.png';
+import teaBagIcon from '../../assets/teabag_icon.png';
 
 
 const Cart = ({ cartItems }) => {
@@ -54,23 +56,19 @@ const Cart = ({ cartItems }) => {
     return (
       <div
         key={item.id}
-        className="cart-content">
-        <div className="cart-content--item-image"></div>
-        <img />
+        className="cart-item">
+        <img className="cart-item--item-icon" src={item.type === "Tea" ? teaBagIcon : beansIcon} />
         <div className="item-details">
-          ITEM DETAILS
           <p className="item-details--item-name">{item.productName}</p>
           <p className="item-details--item-type">{item.type}</p>
           <p className="item-details--item-pounds">${item.price}/lb</p>
         </div>
         <div className="cart-counter">
-          CART COUNTER
-          <button className="cart-counter--increase-btn" onClick={(e) => adjustQuantity(e, item.id)}>+</button>
-          <p className="cart-counter--num-items">{item.quantity}</p>
           <button className="cart-counter--decrease-btn" onClick={(e) => adjustQuantity(e, item.id)}>-</button>
+          <p className="cart-counter--num-items">{item.quantity} lbs</p>
+          <button className="cart-counter--increase-btn" onClick={(e) => adjustQuantity(e, item.id)}>+</button>
         </div>
         <div className="cart-prices">
-          CART PRICES
           <p className="cart-prices--item-price">${item.price * item.quantity}</p>
         </div>
       </div>
@@ -79,18 +77,19 @@ const Cart = ({ cartItems }) => {
   return (
     <div className="cart">
       <div className="cart-card">
-        <div className="cart-card__cart-header">
-          CART HEADER
-          <h3 className="cart-header--heading">Your Cart</h3>
-        </div>
+        <h3 className="cart-card__cart-header">
+          Your Cart
+        </h3>
         <div className="cart-content-container">
           {cartItems.length ? allItems : <p>Looks like your cart needs a refill...</p>}
         </div>
         <div className="cart-footer">
-          <p className="cart-totals--subtotal">Subtotal: {formatPrice(subTotal)}</p>
-          <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
-          <p className="cart-totals--shipping">Shipping: {shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
-          <p className="cart-totals--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
+          <div className="cart-totals">
+            <p className="cart-totals--subtotal">Subtotal: {formatPrice(subTotal)}</p>
+            <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
+            <p className="cart-totals--shipping">Shipping: {shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
+            <p className="cart-totals--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
+          </div>
 
         </div>
       </div>

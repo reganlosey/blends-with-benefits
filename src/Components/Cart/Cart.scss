@@ -1,3 +1,5 @@
+@use '../../sass/variables'as *;
+
 .cart {
   outline: 2px solid red;
   display: flex;
@@ -13,57 +15,89 @@
   height: 65%;
   border-radius: 10px;
   outline: 2px solid white;
-  background-color: white;
+  background-color: $secondary-color;
   box-shadow: 5px 5px 20px rgb(74, 112, 128);
   color: black;
+  display:flex;
+  flex-flow:column wrap;
+
 
   &__cart-header {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    color: black;
-    padding: 0 1rem;
-    outline: 2px solid rebeccapurple;
+    text-align: center;
+    font-size: 1.55rem;
   }
 }
 
-.cart-header {
-  &--heading {
-    // margin: 0 auto;
-    font-size: 2rem;
-  }
-
-  &--action {}
-}
 
 .cart-content-container {
-  outline: 4px solid magenta;
-  height:65%;
-  max-height:65%;
-  overflow:scroll;
+  outline: 1px solid magenta;
+  height: 65%;
+  max-height: 65%;
+  overflow-y: scroll;
+  overflow-x: auto;
 }
 
-.cart-content {
-  // outline: 5px solid rgb(0, 98, 255);
+.cart-item {
   display: flex;
-  justify-content: space-around;
+  flex-flow: row wrap;
   align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
 
+  &--item-icon {
+    max-height: 3rem;
+    max-width: 3rem;
+  }
 }
+
 
 .item-details {
-  outline: 2px solid dodgerblue;
-  margin-right: auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  width: 25%;
+  max-width: 30%;
+  padding: 0 .5rem;
+
+  &--item-name {
+    text-decoration: underline;
+  }
 }
 
 .cart-counter {
-  outline: 2px solid magenta;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  min-width: 15%;
+
+  &--increase-btn {
+    width: 2rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &--decrease-btn {
+    width: 2rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.cart-prices {
+  width: 5%;
+  text-align: center;
 }
 
 
 .cart-footer {
   outline: 3px solid red;
-  max-height: 25%;
+  // max-height: 25%;
+}
+
+.cart-totals{
+  display:flex;
+  flex-flow: column wrap;
+  align-items:flex-start;
 }
