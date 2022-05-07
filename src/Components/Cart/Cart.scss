@@ -86,7 +86,6 @@
 }
 
 .cart-prices {
-  outline: 2px solid rebeccapurple;
   width: 5%;
   text-align: center;
 }
@@ -95,4 +94,10 @@
 .cart-footer {
   outline: 3px solid red;
   // max-height: 25%;
+}
+
+.cart-totals{
+  display:flex;
+  flex-flow: column wrap;
+  align-items:flex-start;
 }

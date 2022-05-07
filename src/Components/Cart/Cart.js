@@ -84,10 +84,12 @@ const Cart = ({ cartItems }) => {
           {cartItems.length ? allItems : <p>Looks like your cart needs a refill...</p>}
         </div>
         <div className="cart-footer">
-          <p className="cart-totals--subtotal">Subtotal: {formatPrice(subTotal)}</p>
-          <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
-          <p className="cart-totals--shipping">Shipping: {shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
-          <p className="cart-totals--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
+          <div className="cart-totals">
+            <p className="cart-totals--subtotal">Subtotal: {formatPrice(subTotal)}</p>
+            <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
+            <p className="cart-totals--shipping">Shipping: {shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
+            <p className="cart-totals--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
+          </div>
 
         </div>
       </div>
