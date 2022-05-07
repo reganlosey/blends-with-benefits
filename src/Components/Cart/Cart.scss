@@ -16,6 +16,9 @@
   background-color: white;
   box-shadow: 5px 5px 20px rgb(74, 112, 128);
   color: black;
+  display:flex;
+  flex-flow:column wrap;
+
 
   &__cart-header {
     text-align: center;
@@ -28,15 +31,16 @@
   outline: 1px solid magenta;
   height: 65%;
   max-height: 65%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: auto;
 }
 
-.cart-content {
+.cart-item {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: .5rem 1rem;
 
   &--item-icon {
     max-height: 3rem;
@@ -90,5 +94,5 @@
 
 .cart-footer {
   outline: 3px solid red;
-  max-height: 25%;
+  // max-height: 25%;
 }
