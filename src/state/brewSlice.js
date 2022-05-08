@@ -8,7 +8,7 @@ export const getAllBrewsAsync = createAsyncThunk(
       const resp = await fetch("https://brewedtoserve.herokuapp.com/brews")
       if (resp.ok) {
         const brews = await resp.json()
-        return brews 
+        return brews
       }
     } catch (err) {
       throw new Error(err)
@@ -19,52 +19,19 @@ export const getAllBrewsAsync = createAsyncThunk(
 export const brewSlice = createSlice({
   name: 'brews',
   initialState: [
-    // {
-    //   id: 1,
-    //   productName: 'Brazilian Arabica',
-    //   type: 'Coffee',
-    //   price: 10,
-    //   hasCaffeine: true,
-    //   quantity: 0
-    // },
-    // {
-    //   id: 2,
-    //   productName: 'Columbian Arabica',
-    //   type: 'Coffee',
-    //   price: 10,
-    //   hasCaffeine: true,
-    //   quantity: 0
-    // },
-    // {
-    //   id: 3,
-    //   productName: 'Peruvian Arabica',
-    //   type: 'Coffee',
-    //   price: 10,
-    //   hasCaffeine: false,
-    //   quantity: 0
-    // },
-    // {
-    //   id: 4,
-    //   productName: 'Vietnam Robusta',
-    //   type: 'Espresso',
-    //   price: 15,
-    //   hasCaffeine: true,
-    //   quantity: 0
-    // },
-    // {
-    //   id: 5,
-    //   productName: 'Guatemala Robusta',
-    //   type: 'Espresso',
-    //   price: 15,
-    //   hasCaffeine: true,
-    //   quantity: 0
-    // }
   ],
+
   reducers: {
-    addBrewToCart: (state, action) => {
-      const newItem = action.payload
-      state.push(newItem)
-    },
+    // addItemToCart: (state, action) => {
+    //   const brewToAdd = state.forEach((brew) => {
+    //     if (brew.id === action.payload.id && !state.includes(brew)) {
+    //       brew.quantity += 1
+    //       state.push(brew)
+    //     } else if (brew.id === action.payload.id) {
+    //       brew.quantity += 1
+    //     }
+    //   })
+    // }
   },
   extraReducers: {
     [getAllBrewsAsync.fulfilled]: (state, action) => {
@@ -74,5 +41,5 @@ export const brewSlice = createSlice({
 })
 
 
-export const { addCartItem } = brewSlice.actions;
+export const { addItemToCart } = brewSlice.actions;
 export default brewSlice.reducer;
