@@ -4,28 +4,51 @@ import Homepage from './Components/Homepage/Homepage';
 import Header from './Components/Header/Header';
 import Shop from './Components/Shop/Shop';
 import Cart from './Components/Cart/Cart';
+import { addCartItem } from './state/brewSlice';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import {getAllBrewsAsync} from './state/brewSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {
-  const [brewData, setBrewData] = useState([]);
+  // const [brewData, setBrewData] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [quantity, setQuantity] = useState([]);
+  const dispatch = useDispatch()
+  const brewData = useSelector((state) => state.brews)
 
   const getBrewsData = async () => {
     const resp = await fetchData("https://brewedtoserve.herokuapp.com/brews")
-    setBrewData(resp)
+    // setBrewData(resp)
   }
 
   useEffect(() => {
-    getBrewsData()
-  }, [])
+    dispatch(getAllBrewsAsync());
+
+  }, [dispatch])
 
   const addToCart = (id) => {
     const clickedBrew = brewData.forEach((brew) => {
       if (brew.id === id && !cartItems.includes(brew)) {
         brew.quantity = 1
         setCartItems([...cartItems, brew])
+      }
+      else if (brew.id === id && cartItems.includes(brew)) {
+        brew.quantity += 1
+      }
+    })
+    return clickedBrew
+  }
+
+  const onClick = (id) => {
+    const clickedBrew = brewData.forEach((brew) => {
+      if (brew.id === id && !cartItems.includes(brew)) {
+        brew.quantity = 1
+        dispatch(
+          addCartItem({
+            brew
+          })
+        )
       }
       else if (brew.id === id && cartItems.includes(brew)) {
         brew.quantity += 1
