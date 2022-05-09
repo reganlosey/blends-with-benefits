@@ -6,60 +6,59 @@ import Shop from './Components/Shop/Shop';
 import Cart from './Components/Cart/Cart';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { getAllBrewsAsync } from './state/brewSlice';
+import { addItemToCart } from './state/cartSlice';
+import { addUser } from './state/userSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {
-  const [brewData, setBrewData] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
-  const [quantity, setQuantity] = useState([]);
-
-  const getBrewsData = async () => {
-    const resp = await fetchData("https://brewedtoserve.herokuapp.com/brews")
-    setBrewData(resp)
-  }
+  const dispatch = useDispatch()
+  const brewData = useSelector((state) => state.brews.allBrews)
+  const [value, setValue] = useState('')
 
   useEffect(() => {
-    getBrewsData()
-  }, [])
+    dispatch(getAllBrewsAsync());
+  }, [dispatch])
 
   const addToCart = (id) => {
-    const clickedBrew = brewData.forEach((brew) => {
-      if (brew.id === id && !cartItems.includes(brew)) {
-        brew.quantity = 1
-        setCartItems([...cartItems, brew])
-      }
-      else if (brew.id === id && cartItems.includes(brew)) {
-        brew.quantity += 1
-      }
-    })
-    return clickedBrew
+    const clicked = brewData.find(item => item.id === id)
+    if (clicked) {
+      dispatch(
+        addItemToCart({
+          id: clicked.id,
+          productName: clicked.productName,
+          type: clicked.type,
+          price: clicked.price,
+          hasCaffeine: clicked.hasCaffeine,
+          quantity: clicked.quantity
+        })
+      )
+    }
   }
+  const addNewUser = () => {
+    if(value){
+      dispatch(addUser({
+        value
+      }))
+    }
 
-
-  // const adjustQuantity = (e, id) => {
-  //   const adjustment = cartItems.forEach((brew) => {
-  //     const matchedBrew = brew.id === id
-  //     if (e.target.className.includes('increase') && matchedBrew) {
-  //       console.log('increase>>', id)
-  //       brew.quantity++
-  //       setQuantity(brew.quantity)
-  //     } else if (e.target.className.includes('decrease') && quantity > 0 && matchedBrew) {
-  //       brew.quantity--
-  //       setQuantity(brew.quantity)
-  //     } else if(e.target.className.includes('remove') && matchedBrew){
-  //       brew.quantity = 0;
-  //       setQuantity(brew.quantity)
-  //     }
-  //   })
-  // }
+  }
 
   return (
     <div>
       <Header />
+      <input
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <button
+        onClick={() => addNewUser()}>ADD
+
+      </button>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<Shop allBrews={brewData} addToCart={addToCart} />} />
         <Route path="/shop/:query" element={<Shop allBrews={brewData} addToCart={addToCart} />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   )
