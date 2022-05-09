@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import brewReducer from './brewSlice';
-import cartReducer from './cartSlice'
+import cartReducer from './cartSlice';
+import userReducer from './userSlice';
 
 
 export default configureStore({
   reducer: {
     brews: brewReducer,
-    cartItems: cartReducer
+    cartItems: cartReducer,
+    users: userReducer
   },
 });

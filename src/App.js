@@ -4,15 +4,17 @@ import Homepage from './Components/Homepage/Homepage';
 import Header from './Components/Header/Header';
 import Shop from './Components/Shop/Shop';
 import Cart from './Components/Cart/Cart';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getAllBrewsAsync } from './state/brewSlice';
 import { addItemToCart } from './state/cartSlice';
+import { addUser } from './state/userSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {
   const dispatch = useDispatch()
-  const brewData = useSelector((state) => state.brews)
+  const brewData = useSelector((state) => state.brews.allBrews)
+  const [value, setValue] = useState('')
 
   useEffect(() => {
     dispatch(getAllBrewsAsync());
@@ -33,11 +35,25 @@ const App = () => {
       )
     }
   }
+  const addNewUser = () => {
+    if(value){
+      dispatch(addUser({
+        value
+      }))
+    }
 
+  }
 
   return (
     <div>
       <Header />
+      <input
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <button
+        onClick={() => addNewUser()}>ADD
+
+      </button>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<Shop allBrews={brewData} addToCart={addToCart} />} />

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 
 export const getAllBrewsAsync = createAsyncThunk(
-  'brews/getBrewsAsync',
+  'brews/allBrews/getBrewsAsync',
   async () => {
     try {
       const resp = await fetch("https://brewedtoserve.herokuapp.com/brews")
@@ -18,11 +18,12 @@ export const getAllBrewsAsync = createAsyncThunk(
 
 export const brewSlice = createSlice({
   name: 'brews',
-  initialState: [
-  ],
+  initialState: {
+    allBrews:[]
+  },
   extraReducers: {
     [getAllBrewsAsync.fulfilled]: (state, action) => {
-      return action.payload
+      state.allBrews = action.payload
     }
   }
 })

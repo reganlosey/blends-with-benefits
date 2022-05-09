@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { addItemToCart } from '../../state/cartSlice';
 
 const Shop = ({ addToCart }) => {
-  const allBrews = useSelector((state) => state.brews)
+  const allBrews = useSelector((state) => state.brews.allBrews)
   const params = useParams()
   const reqParams = useParams().query === 'coffee' ? ['espresso', 'coffee'] : 'tea';
   const brewCards = allBrews.reduce((arr, brew) => {
