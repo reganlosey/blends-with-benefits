@@ -1,6 +1,6 @@
 import './Cart.scss'
 import { useState, useEffect } from 'react';
-import { addItemToCart, removeItemFromCart } from '../../state/cartSlice';
+import { addItemToCart, removeItemFromCart } from '../../redux/cartSlice';
 import { useSelector, useDispatch } from "react-redux";
 import beansIcon from '../../assets/beans_icon.png';
 import teaBagIcon from '../../assets/teabag_icon.png';

@@ -6,9 +6,9 @@ import Shop from './Components/Shop/Shop';
 import Cart from './Components/Cart/Cart';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { getAllBrewsAsync } from './state/brewSlice';
-import { addItemToCart } from './state/cartSlice';
-import { addUser } from './state/userSlice';
+import { getAllBrewsAsync } from './redux/brewSlice';
+import { addItemToCart } from './redux/cartSlice';
+import { addUser } from './redux/userSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {

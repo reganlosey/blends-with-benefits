@@ -2,7 +2,7 @@ import './Shop.scss';
 import Brew from '../Brew/Brew';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { addItemToCart } from '../../state/cartSlice';
+import { addItemToCart } from '../../redux/cartSlice';
 
 const Shop = ({ addToCart }) => {
   const allBrews = useSelector((state) => state.brews.allBrews)
