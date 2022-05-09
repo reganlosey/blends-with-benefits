@@ -1,5 +1,7 @@
 import './Cart.scss'
 import { useState, useEffect } from 'react';
+import { addItemToCart, removeItemFromCart } from '../../state/cartSlice';
+import { useSelector, useDispatch } from "react-redux";
 import beansIcon from '../../assets/beans_icon.png';
 import teaBagIcon from '../../assets/teabag_icon.png';
 
@@ -7,6 +9,8 @@ import teaBagIcon from '../../assets/teabag_icon.png';
 const Cart = ({ cartItems }) => {
   const [subTotal, setSubTotal] = useState(0);
   const [shippingCost, setShippingCost] = useState(0);
+  const dispatch = useDispatch()
+  console.log(cartItems)
 
   const formatPrice = (price) => {
     return price.toLocaleString('en-US', {
@@ -14,7 +18,6 @@ const Cart = ({ cartItems }) => {
       currency: "USD"
     })
   }
-
 
   useEffect(() => {
     calculateTotals()
@@ -40,11 +43,24 @@ const Cart = ({ cartItems }) => {
     const adjustment = cartItems.forEach((brew) => {
       const matchedBrew = brew.id === id
       if (e.target.className.includes('increase') && matchedBrew) {
-        console.log('increase>>', id)
-        brew.quantity++
+        dispatch(addItemToCart({
+          id: brew.id,
+          productName: brew.productName,
+          type: brew.type,
+          price:brew.price,
+          hasCaffeine: brew.hasCaffeine,
+          quantity: brew.quantity
+        }))
         calculateTotals()
       } else if (e.target.className.includes('decrease') && brew.quantity > 0 && matchedBrew) {
-        brew.quantity--
+          dispatch(removeItemFromCart({
+          id: brew.id,
+          productName: brew.productName,
+          type: brew.type,
+          price:brew.price,
+          hasCaffeine: brew.hasCaffeine,
+          quantity: brew.quantity
+        }))
         calculateTotals()
       } else if (e.target.className.includes('remove') && matchedBrew) {
         brew.quantity = 0;

@@ -20,19 +20,6 @@ export const brewSlice = createSlice({
   name: 'brews',
   initialState: [
   ],
-
-  reducers: {
-    // addItemToCart: (state, action) => {
-    //   const brewToAdd = state.forEach((brew) => {
-    //     if (brew.id === action.payload.id && !state.includes(brew)) {
-    //       brew.quantity += 1
-    //       state.push(brew)
-    //     } else if (brew.id === action.payload.id) {
-    //       brew.quantity += 1
-    //     }
-    //   })
-    // }
-  },
   extraReducers: {
     [getAllBrewsAsync.fulfilled]: (state, action) => {
       return action.payload

@@ -11,19 +11,9 @@ import { addItemToCart } from './state/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {
-  // const [brewData, setBrewData] = useState([]);
-  // const [cartItems, setCartItems] = useState([]);
-  const [quantity, setQuantity] = useState([]);
   const dispatch = useDispatch()
   const brewData = useSelector((state) => state.brews)
   const cartItems = useSelector((state) => state.cartItems)
-  const state = useSelector((state) => state)
-  console.log(state)
-
-  const getBrewsData = async () => {
-    const resp = await fetchData("https://brewedtoserve.herokuapp.com/brews")
-    // setBrewData(resp)
-  }
 
   useEffect(() => {
     dispatch(getAllBrewsAsync());
