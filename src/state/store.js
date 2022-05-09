@@ -7,7 +7,7 @@ import userReducer from './userSlice';
 export default configureStore({
   reducer: {
     brews: brewReducer,
-    cartItems: cartReducer,
+    cart: cartReducer,
     users: userReducer
   },
 });
