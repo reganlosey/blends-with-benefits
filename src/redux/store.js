@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import brewReducer from './brewSlice';
 import cartReducer from './cartSlice';
-import userReducer from './userSlice';
+import orderReducer from './orderSlice';
 import { combineReducers } from "redux"
 import {
   persistStore,
@@ -21,13 +21,13 @@ const persistConfig = {
   storage,
 }
 
-const rootReducer = combineReducers({
+const combinedReducers = combineReducers({
   brews: brewReducer,
   cart: cartReducer,
-  users: userReducer
+  orders: orderReducer
 })
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, combinedReducers)
 
 export const store = configureStore({
   reducer: persistedReducer,
@@ -41,10 +41,3 @@ export const store = configureStore({
 
 export let persistor = persistStore(store)
 
-export default configureStore({
-  reducer: {
-    brews: brewReducer,
-    cart: cartReducer,
-    users: userReducer
-  },
-});
