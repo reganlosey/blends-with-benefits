@@ -9,7 +9,7 @@ import teaBagIcon from '../../assets/teabag_icon.png';
 const Cart = () => {
   const [subTotal, setSubTotal] = useState(0);
   const [shippingCost, setShippingCost] = useState(0);
-  const cartItems = useSelector((state) => state.cart)
+  const cartItems = useSelector((state) => state.cart.items)
   const dispatch = useDispatch()
 
   const formatPrice = (price) => {
