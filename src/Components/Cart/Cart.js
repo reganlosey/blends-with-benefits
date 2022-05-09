@@ -6,11 +6,11 @@ import beansIcon from '../../assets/beans_icon.png';
 import teaBagIcon from '../../assets/teabag_icon.png';
 
 
-const Cart = ({ cartItems }) => {
+const Cart = () => {
   const [subTotal, setSubTotal] = useState(0);
   const [shippingCost, setShippingCost] = useState(0);
+  const cartItems = useSelector((state) => state.cartItems)
   const dispatch = useDispatch()
-  console.log(cartItems)
 
   const formatPrice = (price) => {
     return price.toLocaleString('en-US', {
