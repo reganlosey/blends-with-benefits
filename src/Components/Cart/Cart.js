@@ -1,6 +1,8 @@
 import './Cart.scss'
 import { useState, useEffect } from 'react';
-import { addItemToCart, removeItemFromCart } from '../../state/cartSlice';
+import { persistor } from '../../redux/store';
+import { addItemToCart, removeItemFromCart, clearCart } from '../../redux/cartSlice';
+import { placeOrder } from '../../redux/orderSlice';
 import { useSelector, useDispatch } from "react-redux";
 import beansIcon from '../../assets/beans_icon.png';
 import teaBagIcon from '../../assets/teabag_icon.png';
@@ -10,7 +12,9 @@ const Cart = () => {
   const [subTotal, setSubTotal] = useState(0);
   const [shippingCost, setShippingCost] = useState(0);
   const cartItems = useSelector((state) => state.cart.items)
+  const orders = useSelector((state) => state.orders.allOrders)
   const dispatch = useDispatch()
+  const today = Date.now()
 
   const formatPrice = (price) => {
     return price.toLocaleString('en-US', {
@@ -24,6 +28,7 @@ const Cart = () => {
   }, [])
 
   const calculateTotals = () => {
+    // persistor.purge()
     const totals = cartItems.reduce((sum, item) => {
       sum += (item.price * item.quantity)
       return sum
@@ -47,17 +52,17 @@ const Cart = () => {
           id: brew.id,
           productName: brew.productName,
           type: brew.type,
-          price:brew.price,
+          price: brew.price,
           hasCaffeine: brew.hasCaffeine,
           quantity: brew.quantity
         }))
         calculateTotals()
       } else if (e.target.className.includes('decrease') && brew.quantity > 0 && matchedBrew) {
-          dispatch(removeItemFromCart({
+        dispatch(removeItemFromCart({
           id: brew.id,
           productName: brew.productName,
           type: brew.type,
-          price:brew.price,
+          price: brew.price,
           hasCaffeine: brew.hasCaffeine,
           quantity: brew.quantity
         }))
@@ -66,6 +71,31 @@ const Cart = () => {
         brew.quantity = 0;
       }
     })
+  }
+
+  const placeNewOrder = (e) => {
+    e.preventDefault()
+    const newOrder = cartItems.reduce((arr, item) => {
+      if (!orders.includes(item)) {
+        arr.push({
+          id: item.id,
+          productName: item.productName,
+          type: item.type,
+          price: item.price,
+          hasCaffeine: item.hasCaffeine,
+          quantity: item.quantity,
+          subTotal: subTotal,
+          shippingCost: shippingCost,
+          orderDate: today
+
+        })
+      }
+      return arr
+    }, [])
+    dispatch(placeOrder(
+      newOrder
+    ))
+    dispatch(clearCart())
   }
 
   const allItems = cartItems.map((item) => {
@@ -105,8 +135,12 @@ const Cart = () => {
             <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
             <p className="cart-totals--shipping">Shipping: {shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
             <p className="cart-totals--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
+            <button
+              className="place-order-btn"
+              onClick={(e) => placeNewOrder(e)}
+            > Place Order
+            </button>
           </div>
-
         </div>
       </div>
     </div>
