@@ -8,6 +8,7 @@ export const orderSlice = createSlice({
   reducers: {
     placeOrder: (state, action) => {
       state.allOrders.push(action.payload)
+
     },
 
   }

@@ -14,6 +14,7 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items)
   const orders = useSelector((state) => state.orders.allOrders)
   const dispatch = useDispatch()
+  const today = Date.now()
 
   const formatPrice = (price) => {
     return price.toLocaleString('en-US', {
@@ -76,11 +77,24 @@ const Cart = () => {
     e.preventDefault()
     const newOrder = cartItems.reduce((arr, item) => {
       if (!orders.includes(item)) {
-        arr.push(item)
+        arr.push({
+          id: item.id,
+          productName: item.productName,
+          type: item.type,
+          price: item.price,
+          hasCaffeine: item.hasCaffeine,
+          quantity: item.quantity,
+          subTotal: subTotal,
+          shippingCost: shippingCost,
+          orderDate: today
+
+        })
       }
       return arr
     }, [])
-    dispatch(placeOrder(newOrder))
+    dispatch(placeOrder(
+      newOrder
+    ))
     dispatch(clearCart())
   }
 
