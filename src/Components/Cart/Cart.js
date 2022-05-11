@@ -28,7 +28,7 @@ const Cart = () => {
   }, [])
 
   const calculateTotals = () => {
-    persistor.purge()
+    // persistor.purge()
     const totals = cartItems.reduce((sum, item) => {
       sum += (item.price * item.quantity)
       return sum

@@ -17,10 +17,11 @@ const Orders = () => {
       key={index + 1}
     >
       <div className="order-items">
-        <h1>Items Ordered</h1>
-        <p className="items-list">{order.map((item) => `${item.productName} : ${item.quantity} lbs`)} </p>
-        <p className="order-date"> Placed On: {new Date(order[0].orderDate).toDateString()}</p>
-        <p className="order-total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
+        <h1 className="order-items--summary-text">Order Summary</h1>
+        <p className="order-items--items-ordered">Items Ordered</p>
+        <p className="order-items--items-list">{order.map((item) => `${item.productName} : ${item.quantity} lbs`)} </p>
+        <p className="order-items--order-date"> Placed On: {new Date(order[0].orderDate).toDateString()}</p>
+        <p className="order-items--order-total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
         <h1></h1>
       </div>
     </article>

@@ -2,3 +2,19 @@
   border: 2px solid red;
   width: 50%;
 }
+
+.order-items {
+  display: flex;
+  flex-flow: column wrap;
+  &--summary-text {
+    
+  }
+
+  &--items-list {
+
+  }
+
+  &--order-date {}
+
+  &--order-total {}
+}
