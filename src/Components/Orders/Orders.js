@@ -19,8 +19,8 @@ const Orders = () => {
       <div className="order-items">
         <h1>Items Ordered</h1>
         <p className="items-list">{order.map((item) => `${item.productName} : ${item.quantity} lbs`)} </p>
+        <p className="order-date"> Placed On: {new Date(order[0].orderDate).toDateString()}</p>
         <p className="order-total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
-        <p className="order-date"> Date Ordered: {new Date(order[0].orderDate).toDateString()}</p>
         <h1></h1>
       </div>
     </article>
