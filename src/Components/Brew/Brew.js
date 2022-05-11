@@ -1,13 +1,22 @@
 import './Brew.scss'
+import beansIcon from '../../assets/beans_icon.png';
+import teaBagIcon from '../../assets/teabag_icon.png';
 
 const Brew = ({ id, productName, type, price, hasCaffeine, quantity, addToCart }) => {
   return (
     <article className={type === 'Tea' ? "brew-card brew-card--tea" : "brew-card brew-card--coffee"}>
-      <p className="brew-info__name">{productName}</p>
-      <p className="brew-info__type">{type}</p>
-      <p className="brew-info__price">Price: ${price}</p>
-      <p className="brew-info__caffeine">{hasCaffeine ? "Caffeinated: Yes" : "Caffeinated: No"} </p>
-      <button onClick={(e) => addToCart(id)}className="brew-card--cart-btn">Add To Cart</button>
+      <div className="brew-info">
+        <div className="brew-info__header">
+          <p className="brew-info--name">{productName}</p>
+        </div>
+        <img className="card-icon" src={type === "Tea" ? teaBagIcon : beansIcon} />
+        <div className="brew-info__body">
+          <p className="brew-info--type">{type}</p>
+          <p className="brew-info--price">${price}/lb</p>
+          <p className="brew-info--caffeine">{hasCaffeine ? "Caffeinated: Yes" : "Caffeinated: No"} </p>
+          <button onClick={(e) => addToCart(id)} className="brew-card--cart-btn">Add To Cart</button>
+        </div>
+      </div>
     </article>
   )
 }
