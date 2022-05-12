@@ -1,6 +1,6 @@
 import './Brew.scss'
-import beansIcon from '../../assets/beans_icon.png';
-import teaBagIcon from '../../assets/teabag_icon.png';
+import beansIcon from '../../assets/coffee-pot.svg';
+import teaBagIcon from '../../assets/tea-cup.svg';
 
 const Brew = ({ id, productName, type, price, hasCaffeine, quantity, addToCart }) => {
   return (

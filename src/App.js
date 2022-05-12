@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<Shop allBrews={brewData} addToCart={addToCart} />} />
