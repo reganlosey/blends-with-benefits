@@ -18,12 +18,12 @@
   &--heading {
     color: $primary-color;
     text-shadow: 1px 0px 0px black,
-    -1px 0px 0px black,
-    0px 1px 0px black,
-    0px -2px 0px black,
-    0px 2px 0px black,
-    2px 0px 0px black,
-    -2px 0px 0px black;
+      -1px 0px 0px black,
+      0px 1px 0px black,
+      0px -2px 0px black,
+      0px 2px 0px black,
+      2px 0px 0px black,
+      -2px 0px 0px black;
     font-size: 4vw;
   }
 
@@ -46,8 +46,7 @@
       -5px 4px 0px $secondary-color,
       -7px 6px 0px $accent-color-three,
       -9px 8px 0px $accent-color-two,
-      0px 0px 4px black,
-      0px 0px 4px black,
+      -10px 9px 0px black,
   }
 
 }
@@ -55,24 +54,32 @@
 
 .browse-wrapper {
   font-size: 2.5vw;
-  display:flex;
+  display: flex;
   flex-flow: row wrap;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
 
-  &--coffee-btn{
+  &--coffee-btn,
+  &--tea-btn {
     color: black;
-    background-color: $accent-color-two;
-    box-shadow: 8px 6px 0px 3px $primary-color;
-    border:2px solid black;
+    box-shadow: 7px 5px 0px 3px $primary-color;
+    border: 2px solid black;
     border-radius: 10px;
+    padding:.2rem 1rem;
+    transition: all 50ms ease;
+    cursor: pointer;
+
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 5px 3px 0px 3px $primary-color;
+    }
 
   }
 
-  &--tea-btn{
-    color: black;
+  &--coffee-btn {
+    background-color: $accent-color-two;
+  }
+
+  &--tea-btn {
     background-color: $accent-color-three;
-    box-shadow: 8px 6px 0px 3px $primary-color;
-    border:2px solid black;
-    border-radius: 10px;
   }
 }
