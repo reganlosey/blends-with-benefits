@@ -1,17 +1,18 @@
 @use './sass/variables'as *;
 
-html{
-  // background: url('./assets/bg_waves1.svg') no-repeat center center fixed; 
-  // background-color: $accent-color-three;
-  background: url('./assets/bg_waves2.svg') no-repeat center center fixed; 
+html {
+  background-image: url('./assets/bg_waves2.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  // background: url('./assets/bg_waves2.svg') no-repeat center center fixed; 
 }
 
 body {
-  // height:100%;
   font-family: $primary-font;
   color: black;
 }
 
-.App{
+.App {
   height: 100%;
 }
