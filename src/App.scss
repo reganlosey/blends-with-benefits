@@ -1,6 +1,8 @@
 @use './sass/variables'as *;
 
 html{
+  // background: url('./assets/bg_waves1.svg') no-repeat center center fixed; 
+  // background-color: $accent-color-three;
   background: url('./assets/bg_waves2.svg') no-repeat center center fixed; 
 }
 
