@@ -11,8 +11,8 @@ const Homepage = () => {
         <h1 className="intro--site-name">BLENDS WITH BENEFITS</h1>
       </div>
       <div className="browse-wrapper">
-        <p className="browse-wrapper--coffee-txt">Browse Coffee</p>
-        <p className="browse-wrapper--tea-txt">Browse Tea</p>
+        <button className="browse-wrapper--coffee-btn">Browse Coffee</button>
+        <button className="browse-wrapper--tea-btn">Browse Tea</button>
       </div>
 
     </div>
