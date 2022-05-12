@@ -3,28 +3,23 @@
 
 .brew-card {
   outline: 2px solid white;
-  background-color: #b36d53;
   border-radius: 10px;
 
-  // word-wrap: break-word;
-
   &--coffee {
-    // background-image: url('https://images.unsplash.com/photo-1585349048087-e7363ae659ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
-    // background-size: cover;
-    // background-position: center;
+    background-color: #a47c6c;
   }
 
   &--tea {
-    // background-image: url('https://images.unsplash.com/photo-1498604636225-6b87a314baa0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80');
-    // background-size: cover;
-    // background-position: center;
+    background-color: #7ea46c;
     color: black;
-    font-weight: bold;
   }
 
   &--cart-btn {
     align-self: center;
     padding: .5rem 1rem;
+    background-color: $primary-color;
+    border: 2px solid black;
+    border-radius: 5px;
 
   }
 }
@@ -43,6 +38,7 @@
   }
 
   &__body {
+    font-size: 1.25rem;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -50,6 +46,6 @@
 }
 
 .card-icon {
-  max-width: 3rem;
+  max-width: 6rem;
   margin: 0 auto;
 }
