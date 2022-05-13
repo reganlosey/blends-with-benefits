@@ -22,7 +22,7 @@ const Cart = () => {
       currency: "USD"
     })
   }
-  persistor.purge()
+  // persistor.purge()
 
   useEffect(() => {
     calculateTotals()
@@ -96,7 +96,7 @@ const Cart = () => {
       newOrder
     ))
     dispatch(clearCart())
-    calculateTotals()
+    setSubTotal(0);
   }
 
   const allItems = cartItems.map((item) => {
@@ -140,6 +140,7 @@ const Cart = () => {
             <p className="place-order--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
             <button
               className="place-order--btn"
+              disabled={subTotal ? false : true}
               onClick={(e) => placeNewOrder(e)}
             > Place Order
             </button>
