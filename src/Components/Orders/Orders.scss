@@ -1,40 +1,37 @@
+@use '../../sass/variables'as *;
+
 .orders {
   outline: 2px solid red;
   display: flex;
+  height: 95vh;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  max-height: 95%;
-}
-
-.order-content-container {
-  max-height: 70vh;
-  overflow-y: scroll;
-  border: 2px solid red;
-
-}
-
-
-.order-content {
-  background-color: white;
-  margin: 1rem 0;
 }
 
 .order-card {
   min-width: 75%;
-  height: 85%;
+  max-height: 85%;
   border-radius: 10px;
   outline: 2px solid white;
   box-shadow: 5px 5px 20px rgb(0, 0, 0);
   color: black;
+  background-color: $accent-color-three;
   font-size: 1.25rem;
   padding: 1rem;
+
+  &--inner {
+    background-color: white;
+    overflow-y: scroll;
+    height: 85%;
+  }
 }
 
 
 .order-items {
-  display: flex;
-  flex-flow: column wrap;
+  // display: flex;
+  // flex-flow: column wrap;
+  width: 75%;
   outline: 2px solid mediumspringgreen;
 
   &--summary-text {}
