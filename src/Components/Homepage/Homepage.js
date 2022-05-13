@@ -5,16 +5,14 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <div className="intro">
-        <h1 className="intro--heading">Hey there, hot stuff</h1>
-        <h2 className="intro-subheading">Welcome to</h2>
-        <p className="intro--site-name">Blends With Benefits</p>
+        <p className="intro--heading">Hey There Hot Stuff, Welcome To</p>
+        <h1 className="intro--site-name">BLENDS WITH BENEFITS</h1>
       </div>
-      <div className="get-started">
-        {/* <p>Let's get started</p> */}
-        <button className="get-started--start-btn">
-          <Link to="/shop">Browse All Brews</Link>
-        </button>
+      <div className="browse-wrapper">
+        <button className="browse-wrapper--coffee-btn"><Link to="/shop/coffee">Browse Coffee</Link></button>
+        <button className="browse-wrapper--tea-btn"><Link to="/shop/tea">Browse Tea</Link></button>
       </div>
+
     </div>
   )
 

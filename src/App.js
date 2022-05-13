@@ -36,7 +36,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />

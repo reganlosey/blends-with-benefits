@@ -1,9 +1,9 @@
 @use '../../sass/variables'as *;
 
-.shop{
+.shop {
   border: 2px solid magenta;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
 }
 
 .brew-cards {
@@ -11,12 +11,13 @@
   display: grid;
   margin: 0 auto;
   grid-gap: 2rem;
-  grid-template-columns: repeat(3, minmax(15em, 25em));
-  grid-auto-rows:minmax(max-content, 25em);
+  grid-template-columns: repeat(3, minmax(20em, 25em));
+  grid-auto-rows: minmax(15em, 18em);
 }
 
 @media screen and (max-width: 900px) {
   .brew-cards {
-    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15em, 20em));
+    grid-template-rows: minmax(max-content, 20em);
   }
 }
