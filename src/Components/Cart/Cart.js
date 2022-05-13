@@ -4,8 +4,8 @@ import { persistor } from '../../redux/store';
 import { addItemToCart, removeItemFromCart, clearCart } from '../../redux/cartSlice';
 import { placeOrder } from '../../redux/orderSlice';
 import { useSelector, useDispatch } from "react-redux";
-import beansIcon from '../../assets/beans_icon.png';
-import teaBagIcon from '../../assets/teabag_icon.png';
+import beansIcon from '../../assets/coffee-pot.svg';
+import teaBagIcon from '../../assets/tea-cup.svg';
 
 
 const Cart = () => {
@@ -122,21 +122,23 @@ const Cart = () => {
   })
   return (
     <div className="cart">
+      <h3 className="cart-card__cart-header">
+        Your Cart
+      </h3>
       <div className="cart-card">
-        <h3 className="cart-card__cart-header">
-          Your Cart
-        </h3>
         <div className="cart-content-container">
-          {cartItems.length ? allItems : <p>Looks like your cart needs a refill...</p>}
+          {cartItems.length ? allItems : <p className="empty-txt">Looks like your cart needs a refill...</p>}
         </div>
-        <div className="cart-footer">
+        <div className="cart-sidebar">
           <div className="cart-totals">
             <p className="cart-totals--subtotal">Subtotal: {formatPrice(subTotal)}</p>
-            <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
             <p className="cart-totals--shipping">Shipping: {shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
-            <p className="cart-totals--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
+            <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
+          </div>
+          <div className="place-order">
+            <p className="place-order--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
             <button
-              className="place-order-btn"
+              className="place-order--btn"
               onClick={(e) => placeNewOrder(e)}
             > Place Order
             </button>
