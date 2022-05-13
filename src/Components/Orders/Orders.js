@@ -1,18 +1,21 @@
 import './Orders.scss';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 
 const Orders = () => {
   const allOrders = useSelector((state) => state.orders.allOrders)
+  const [orderDate, setOrderDate] = useState('');
+  const [subTotal, setSubTotal] = useState(0);
+
   const formatPrice = (price) => {
     return price.toLocaleString('en-US', {
       style: "currency",
       currency: "USD"
     })
   }
+  
   const orderCards = allOrders.map((order, index) => {
-    console.log(order)
-    console.log(typeof order[0].orderDate)
     return <article className="order-card"
       key={index + 1}
     >
@@ -25,13 +28,12 @@ const Orders = () => {
         <h1></h1>
       </div>
     </article>
-
   })
 
 
   return (
-    <div>
-      {orderCards}
+    <div className="order-card-container">
+      {allOrders.length ? orderCards : <p className="empty-order-txt">Awful quiet in here...</p>}
     </div>
   )
 }

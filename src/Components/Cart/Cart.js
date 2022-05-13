@@ -22,13 +22,13 @@ const Cart = () => {
       currency: "USD"
     })
   }
+  persistor.purge()
 
   useEffect(() => {
     calculateTotals()
   }, [])
-
+  
   const calculateTotals = () => {
-    // persistor.purge()
     const totals = cartItems.reduce((sum, item) => {
       sum += (item.price * item.quantity)
       return sum
@@ -96,6 +96,7 @@ const Cart = () => {
       newOrder
     ))
     dispatch(clearCart())
+    calculateTotals()
   }
 
   const allItems = cartItems.map((item) => {
@@ -122,10 +123,10 @@ const Cart = () => {
   })
   return (
     <div className="cart">
+      <div className="cart-card">
       <h3 className="cart-card__cart-header">
         Your Cart
       </h3>
-      <div className="cart-card">
         <div className="cart-content-container">
           {cartItems.length ? allItems : <p className="empty-txt">Looks like your cart needs a refill...</p>}
         </div>
