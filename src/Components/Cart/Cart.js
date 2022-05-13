@@ -35,9 +35,9 @@ const Cart = () => {
     }, 0)
 
     setSubTotal(totals)
-    if (totals > 0 && totals < 20) {
+    if (totals < 20 && totals > 0 ) {
       setShippingCost(5)
-    } else {
+    } else if (totals > 20){
       setShippingCost(0)
     }
     return subTotal
