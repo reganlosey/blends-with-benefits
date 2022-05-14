@@ -1,4 +1,4 @@
-Cypress.Commands.add('addToCart',(addButton) => {
+Cypress.Commands.add('addToCart',() => {
   cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
         fixture: 'brews'
       })

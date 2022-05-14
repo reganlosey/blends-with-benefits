@@ -2,16 +2,10 @@ describe('Cart', () => {
   before(() => {
     cy.addToCart()
   })
-  beforeEach(() => {
-    cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
-        fixture: 'brews'
-      })
-      .visit('http://localhost:3000/cart/')
-  })
 
   it('cart should contain all items that were clicked', () => {
     cy.get('.cart')
-    .get('.cart-content-container')
+      .get('.cart-content-container')
       .children('.cart-item')
       .then(cartItems => expect(cartItems.length).to.eq(12))
       .reload()
@@ -19,10 +13,34 @@ describe('Cart', () => {
 
   it('should have the correct number of pounds per item', () => {
     cy.get('.cart-content-container')
-    .children('.cart-item')
-    .each(() => {
-      cy.get('.cart-counter > .cart-counter--num-items')
+      .children('.cart-item')
+      .each(() => {
+        cy.get('.cart-counter > .cart-counter--num-items')
+          .contains('1 lbs')
+      })
+  })
+
+  it('should be able to increase and decrease an item\'s quantity', () => {
+    cy.get('.cart-content-container')
+      .get(':nth-child(1) > .cart-counter > .cart-counter--increase-btn')
+      .click()
+      .get('.cart-counter--num-items')
+      .contains('2 lbs')
+      .get(':nth-child(1) > .cart-counter > .cart-counter--decrease-btn')
+      .click()
+      .get('.cart-counter--num-items')
       .contains('1 lbs')
-    })
+  })
+
+  it('should not be able to decrease an item\s quantity to less than 0', () => {
+    cy.get('.cart-content-container')
+      .get(':nth-child(1) > .cart-counter > .cart-counter--num-items')
+      .contains('1 lbs')
+      .get(':nth-child(1) > .cart-counter > .cart-counter--decrease-btn')
+      .click()
+      .click()
+      .click()
+      .get('.cart-counter--num-items')
+      .contains('0 lbs')
   })
 })
