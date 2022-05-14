@@ -16,20 +16,18 @@ const Orders = () => {
   }
 
   const orderCards = allOrders.map((order, index) => {
-    return <div className="order-details"
+    return <div className="order-card"
       key={index + 1}
     >
-      <div className="order-details--header">
-        <div className="num-total">
-          <p className="order-details--order-num">Order#: 6574983 </p>
-          <p className="order-details--order-date">Placed On: {new Date(order[0].orderDate).toDateString()}</p>
-        </div>
-        <div className="total-and-cancel">
-          <p className="order-details--order-total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
+      <div className="order-card--header">
+          <p className="order-card--total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
+        <div className="order-card--date-and-num">
+          <p className="order-card--order-date">Placed On: {new Date(order[0].orderDate).toDateString()}</p>
+          <p className="order-card--order-num">Order#: 6574983 </p>
         </div>
       </div>
-      <div className="items-list">
-        <p className="items-ordered-txt">Items Ordered</p>
+      <p className="items-ordered-txt">Items Ordered</p>
+      <div className="order-summary">
         {order.map((item) =>
           <div key={item.id}
             className="ordered-item">
@@ -38,17 +36,17 @@ const Orders = () => {
           </div>)
         }
       </div>
+      {/* <div className="order-card--footer"> */}
+      {/* </div> */}
     </div>
   })
 
 
   return (
     <div className="orders">
-      <div className="order-card">
-        <h3 className="order-card--header"> Your Orders</h3>
+      <div className="order-card-container">
+        <h3 className="order-card-container--header"> Your Orders</h3>
         {allOrders.length ? orderCards : <p className="empty-orders-txt">Awful quiet in here...</p>}
-        {/* <div className="order-card--inner">
-        </div> */}
       </div>
     </div>
 
