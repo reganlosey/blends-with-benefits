@@ -34,7 +34,23 @@ describe('Shop', () => {
           .should('contain', 'Tea')
           .and('contain', '$10/lb')
       })
-
+  })
+  it('should add items to the user\'s cart when add button is clicked', () => {
+    cy.get('.brew-cards')
+      .children('.brew-card')
+      .its('length')
+      .then(numOfCards => {
+        for (let i = 1; i <= numOfCards; i ++){
+          cy.get('.brew-card--cart-btn')
+          .click({multiple:true})
+          return
+        }
+      })
+      cy.visit('http://localhost:3000/cart/')
+      .url('eq', 'http://localhost:3000/cart/')
+      .get('.cart-content-container')
+      .children('.cart-item')
+      .then(cartItems => expect(cartItems.length).to.eq(12))
   })
 
 })
