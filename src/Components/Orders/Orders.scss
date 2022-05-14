@@ -20,9 +20,9 @@
   font-size: 1.25rem;
   padding: 1rem;
   display: flex;
-  flex-flow:column nowrap;
-  align-items:center;
-  justify-content:center;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 
   &--inner {
     padding: 1rem;
@@ -32,24 +32,79 @@
     height: 85%;
     border: 2px solid red;
     display: flex;
-    flex-flow:column nowrap;
-    align-items:center;
-    
+    flex-flow: column nowrap;
+    align-items: center;
+
   }
 }
 
 
-.order-items {
+.order-details {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row nowrap;
+  // align-items: center;
+  justify-content: space-between;
+  margin: .5rem 0;
   width: 75%;
-  outline: 2px solid mediumspringgreen;
+  min-height: 50%;
+  // overflow-y: scroll;
+  outline: 2px solid black;
 
-  &--summary-text {}
 
-  &--items-list {}
+  &--inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: wheat;
+    overflow-y: auto;
+    flex-flow: column nowrap;
+    // justify-content: space-around;
+    // align-items: center;
+  }
 
   &--order-date {}
 
   &--order-total {}
+}
+
+// .order-details-header {
+//   outline: 2px solid dodgerblue;
+//   display: flex;
+//   flex-flow: row wrap;
+//   height: 25%;
+//   justify-content: space-between;
+// }
+
+.items-list {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  background-color: wheat;
+  overflow-y: auto;
+  flex-flow: column nowrap;
+  padding-top: 1rem;
+}
+
+.ordered-item {
+  display: flex;
+  flex-flow: row wrap;
+  align-items:center;
+  justify-content:space-evenly;
+  border: 1px solid;
+  margin: .75rem 0;
+
+  &--item-icon {
+    max-width: 4.5rem;
+
+  }
+}
+
+.order-details-sidebar {
+  outline: 2px solid dodgerblue;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
