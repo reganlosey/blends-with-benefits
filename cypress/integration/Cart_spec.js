@@ -47,32 +47,36 @@ describe('Cart', () => {
   })
   it('should charge $5 for shipping on orders less than $20', () => {
     cy.get('.cart-content-container')
-    .children()
+      .children()
       .its('length')
       .then(numOfItems => {
-        for (let i = 2; i <= numOfItems; i ++){
+        for (let i = 2; i <= numOfItems; i++) {
           cy.get('.cart-counter > .cart-counter--decrease-btn')
-          .click({multiple:true})
+            .click({
+              multiple: true
+            })
           return
         }
-    })
-    .get('.cart-sidebar')
-    .get('.cart-totals--subtotal')
-    .contains('$0.00')
-    .get('.cart-totals--shipping')
-    .contains('$5.00')
+      })
+      .get('.cart-totals--subtotal')
+      .contains('$0.00')
+      .get('.cart-totals--shipping')
+      .contains('$5.00')
+    cy.get('.cart-content-container')
+      .get(':nth-child(1) > .cart-counter > .cart-counter--increase-btn')
+      .click()
+      .get('.cart-totals--subtotal')
+      .contains('$10.00')
+      .get('.cart-totals--shipping')
+      .contains('$5.00')
+  })
+
+  it('should provide free shipping for orders over $20', () => {
     cy.get('.cart-content-container')
     .get(':nth-child(1) > .cart-counter > .cart-counter--increase-btn')
     .click()
-    .get('.cart-sidebar')
-    .get('.cart-totals--subtotal')
-    .contains('$10.00')
-    .get('.cart-totals--shipping')
-    .contains('$5.00')
+    cy.get('.cart-totals--shipping')
+    .contains('Free!')
+
   })
-  // it('should provide free shipping for orders over $20', () => {
-  //   cy.get('.cart-content-container')
-  //   .children()
-    
-  // })
 })
