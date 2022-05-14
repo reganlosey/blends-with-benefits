@@ -27,7 +27,7 @@ const Cart = () => {
   useEffect(() => {
     calculateTotals()
   }, [])
-  
+
   const calculateTotals = () => {
     const totals = cartItems.reduce((sum, item) => {
       sum += (item.price * item.quantity)
@@ -35,9 +35,9 @@ const Cart = () => {
     }, 0)
 
     setSubTotal(totals)
-    if (totals < 20 && totals > 0 ) {
+    if (totals < 20 && totals > 0) {
       setShippingCost(5)
-    } else if (totals > 20){
+    } else if (totals > 20) {
       setShippingCost(0)
     }
     return subTotal
@@ -87,7 +87,6 @@ const Cart = () => {
           subTotal: subTotal,
           shippingCost: shippingCost,
           orderDate: today
-
         })
       }
       return arr
@@ -124,9 +123,9 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="cart-card">
-      <h3 className="cart-card__cart-header">
-        Your Cart
-      </h3>
+        <h3 className="cart-card--cart-header">
+          Your Cart
+        </h3>
         <div className="cart-content-container">
           {cartItems.length ? allItems : <p className="empty-txt">Looks like your cart needs a refill...</p>}
         </div>

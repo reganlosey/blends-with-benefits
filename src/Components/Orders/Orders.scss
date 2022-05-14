@@ -1,20 +1,103 @@
-.order-card {
-  border: 2px solid red;
-  width: 50%;
+@use '../../sass/variables'as *;
+
+.orders {
+  outline: 2px solid red;
+  display: flex;
+  height: 95vh;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.order-items {
+.order-card-container {
+  background-color: $primary-color;
+  min-width: 75%;
+  max-height: 85%;
+  border-radius: 10px;
+  outline: 2px solid white;
+  box-shadow: 5px 5px 20px rgb(0, 0, 0);
+  color: black;
+  font-size: 1.25rem;
+  padding: 1rem;
+  margin: 1rem 0;
   display: flex;
-  flex-flow: column wrap;
-  &--summary-text {
-    
+  flex-flow: column nowrap;
+  align-items: center;
+  overflow-y: auto;
+
+  &--header {
+    font-size: 2rem;
+  }
+}
+
+
+.order-card {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: $primary-color;
+  justify-content: space-around;
+  margin: .5rem 0;
+  min-width: 65%;
+  border-radius: 10px;
+  padding: 2.5rem 1rem;
+  outline: 2px solid black;
+
+  &--header {
+    // display: flex;
+    // flex-flow: row wrap;
+    // align-items: flex-end;
   }
 
-  &--items-list {
-
+  &--date-and-total {
+    color: #5b5b5b;
+    float: left;
+    font-size: .95rem;
   }
 
-  &--order-date {}
+  &--order-num {
+    font-size:1.25rem;
+    text-decoration: underline;
+    text-align: left;
+  }
+}
 
-  &--order-total {}
+.items-ordered-txt {
+  font-size: 1.55rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.order-summary {
+  min-height: 60%;
+  display: flex;
+  border: 3px solid black;
+  border-radius: 10px;
+  overflow: auto;
+  flex-flow: column nowrap;
+  // justify-content: center;
+  // align-items: center;
+  margin: .75rem;
+  padding: 1rem;
+}
+
+
+.ordered-item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  // border: 3px solid;
+  margin: .5% 0;
+  // width: 75%;
+  // max-height: 100%;
+  // padding: 1rem 0;
+  border-radius: 5px;
+
+  &--item-icon {
+    max-width: 2.5rem;
+  }
+
+  &--item-name {
+    width: 90%;
+  }
 }

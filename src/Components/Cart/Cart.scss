@@ -22,9 +22,9 @@
   padding: 1rem;
 
 
-  &__cart-header {
+  &--cart-header {
     text-align: center;
-    font-size: 1.55rem;
+    font-size: 2rem;
   }
 }
 
@@ -50,6 +50,7 @@
   align-items: center;
   justify-content: space-between;
   padding: .5rem 1rem;
+  outline:2px solid magenta;
 
   &--item-icon {
     max-width: 3.5rem;
