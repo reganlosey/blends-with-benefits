@@ -20,10 +20,10 @@ const Orders = () => {
       key={index + 1}
     >
       <div className="order-card--header">
-          <p className="order-card--total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
-        <div className="order-card--date-and-num">
-          <p className="order-card--order-date">Placed On: {new Date(order[0].orderDate).toDateString()}</p>
           <p className="order-card--order-num">Order#: 6574983 </p>
+        <div className="order-card--date-and-total">
+          <p className="order-card--total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
+          <p className="order-card--order-date">Placed On: {new Date(order[0].orderDate).toDateString()}</p>
         </div>
       </div>
       <p className="items-ordered-txt">Items Ordered</p>
