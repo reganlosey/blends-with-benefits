@@ -7,22 +7,19 @@ describe('Shop', () => {
   it('should have a sample test', () => {
     expect(true).to.eq(true)
   })
-
-  it('should render coffee and tea cards to the grid', () => {
+  it('should render all coffee and tea cards', () => {
     cy.get('.brew-cards')
-    .get(':nth-child(1) > .brew-info')
-    .should('contain', 'Brazilian Arabica')
-    .and('contain', 'Coffee')
-    .and('contain', '$10/lb')
-    .and('contain', 'Caffeinated: Yes')
-    .get('.brew-info__body > .brew-card--cart-btn')
-    .contains('Add To Cart')
-    .get(':nth-child(6) > .brew-info')
-    .should('contain', 'Chamomile')
-    .and('contain', 'Tea')
-    .and('contain', '$10/lb')
-    .and('contain', 'Caffeinated: No')
-    .get('.brew-info__body > .brew-card--cart-btn')
-    .contains('Add To Cart')
+    .children('.brew-card')
+    .then(cards => expect(cards.length).to.eq(12))
   })
+  
+  it('all cards should contain a button to add the item to cart', () => {
+    cy.get('.brew-cards')
+    .children('.brew-card')
+    .each(() => {
+      cy.get('.brew-info > .brew-info__body > .brew-card--cart-btn')
+      .should('contain', 'Add To Cart')
+    })
+  })
+
 })
