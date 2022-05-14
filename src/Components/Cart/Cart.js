@@ -123,7 +123,7 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="cart-card">
-        <h3 className="cart-card__cart-header">
+        <h3 className="cart-card--cart-header">
           Your Cart
         </h3>
         <div className="cart-content-container">
