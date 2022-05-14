@@ -42,5 +42,27 @@ describe('Cart', () => {
       .click()
       .get('.cart-counter--num-items')
       .contains('0 lbs')
+      .get(':nth-child(1) > .cart-counter > .cart-counter--increase-btn')
+      .click()
   })
+  it('should charge $5 for shipping on orders less than $20', () => {
+    cy.get('.cart-content-container')
+    .children()
+      .its('length')
+      .then(numOfItems => {
+        for (let i = 2; i <= numOfItems; i ++){
+          cy.get('.cart-counter > .cart-counter--decrease-btn')
+          .click({multiple:true})
+          return
+        }
+    })
+    .reload()
+    .get('.cart-sidebar')
+
+  })
+  // it('should provide free shipping for orders over $20', () => {
+  //   cy.get('.cart-content-container')
+  //   .children()
+    
+  // })
 })
