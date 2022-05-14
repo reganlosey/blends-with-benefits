@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const Orders = () => {
   const allOrders = useSelector((state) => state.orders.allOrders)
-
+  const today = Math.floor(new Date / 90000000)
 
   const formatPrice = (price) => {
     return price.toLocaleString('en-US', {
@@ -20,7 +20,7 @@ const Orders = () => {
       key={index + 1}
     >
       <div className="order-card--header">
-          <p className="order-card--order-num">Order#: 6574983 </p>
+        <p className="order-card--order-num">Order#: {today + index} </p>
         <div className="order-card--date-and-total">
           <p className="order-card--total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
           <p className="order-card--order-date">Placed On: {new Date(order[0].orderDate).toDateString()}</p>

@@ -87,7 +87,6 @@ const Cart = () => {
           subTotal: subTotal,
           shippingCost: shippingCost,
           orderDate: today
-
         })
       }
       return arr
