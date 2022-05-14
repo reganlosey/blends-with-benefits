@@ -51,6 +51,7 @@ describe('Shop', () => {
       .get('.cart-content-container')
       .children('.cart-item')
       .then(cartItems => expect(cartItems.length).to.eq(12))
+      .go('back')
   })
 
 })
