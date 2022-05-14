@@ -56,9 +56,19 @@ describe('Cart', () => {
           return
         }
     })
-    .reload()
     .get('.cart-sidebar')
-
+    .get('.cart-totals--subtotal')
+    .contains('$0.00')
+    .get('.cart-totals--shipping')
+    .contains('$5.00')
+    cy.get('.cart-content-container')
+    .get(':nth-child(1) > .cart-counter > .cart-counter--increase-btn')
+    .click()
+    .get('.cart-sidebar')
+    .get('.cart-totals--subtotal')
+    .contains('$10.00')
+    .get('.cart-totals--shipping')
+    .contains('$5.00')
   })
   // it('should provide free shipping for orders over $20', () => {
   //   cy.get('.cart-content-container')

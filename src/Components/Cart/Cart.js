@@ -22,7 +22,7 @@ const Cart = () => {
       currency: "USD"
     })
   }
-  persistor.purge()
+
   useEffect(() => {
     calculateTotals()
   }, [subTotal, cartItems])
