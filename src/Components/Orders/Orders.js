@@ -19,19 +19,24 @@ const Orders = () => {
     return <div className="order-details"
       key={index + 1}
     >
+      <div className="order-details--header">
+        <div className="num-total">
+          <p className="order-details--order-num">Order#: 6574983 </p>
+          <p className="order-details--order-date">Placed On: {new Date(order[0].orderDate).toDateString()}</p>
+        </div>
+        <div className="total-and-cancel">
+          <p className="order-details--order-total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
+        </div>
+      </div>
       <div className="items-list">
+        <p className="items-ordered-txt">Items Ordered</p>
         {order.map((item) =>
-          <div className="ordered-item">
+          <div key={item.id}
+            className="ordered-item">
             <img className="ordered-item--item-icon" src={item.type === "Tea" ? teaBagIcon : beansIcon} />
             <p className="ordered-item--item-name">{item.productName} :(x {item.quantity}lbs)</p>
           </div>)
         }
-        {/* <button className="cancel-order-btn">Cancel Order</button> */}
-      </div>
-      <div className="order-details-sidebar">
-        <p className="order-details--order-num">Order#: 6574983 </p>
-        <p className="order-details--order-date">Placed On: {new Date(order[0].orderDate).toDateString()}</p>
-        <p className="order-details--order-total">Order Total: {formatPrice(order[0].subTotal + (order[0].subTotal * .08))}</p>
       </div>
     </div>
   })
@@ -41,9 +46,9 @@ const Orders = () => {
     <div className="orders">
       <div className="order-card">
         <h3 className="order-card--header"> Your Orders</h3>
-        <div className="order-card--inner">
-          {allOrders.length ? orderCards : <p className="empty-orders-txt">Awful quiet in here...</p>}
-        </div>
+        {allOrders.length ? orderCards : <p className="empty-orders-txt">Awful quiet in here...</p>}
+        {/* <div className="order-card--inner">
+        </div> */}
       </div>
     </div>
 

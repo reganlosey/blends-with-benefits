@@ -3,16 +3,16 @@
 .orders {
   outline: 2px solid red;
   display: flex;
-  height: 95vh;
-  flex-flow: column wrap;
+  min-height: 100%;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
 
 .order-card {
-  background-color: $accent-color-three;
+  background-color: $primary-color;
   min-width: 75%;
-  max-height: 85%;
+  min-height: 80%;
   border-radius: 10px;
   outline: 2px solid white;
   box-shadow: 5px 5px 20px rgb(0, 0, 0);
@@ -23,79 +23,78 @@
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-
-  &--inner {
-    padding: 1rem;
-    background-color: white;
-    overflow-y: scroll;
-    width: 90%;
-    height: 85%;
-    border: 2px solid red;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-
-  }
 }
 
 
 .order-details {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   // align-items: center;
   justify-content: space-between;
   margin: .5rem 0;
-  width: 75%;
-  min-height: 50%;
+  width: 95%;
+  max-height: 30em;
   // overflow-y: scroll;
-  outline: 2px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  outline: 2px solid rgb(255, 0, 0);
 
+  &--header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: flex-end;
+  }
 
   &--inner {
     width: 100%;
     height: 100%;
     display: flex;
     background-color: wheat;
-    overflow-y: auto;
-    flex-flow: column nowrap;
-    // justify-content: space-around;
-    // align-items: center;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
   }
 
-  &--order-date {}
+  // &--num-total {
+  //   float:right;
+  // }
 
-  &--order-total {}
+  // &--order-total {
+  //   float: right;
+  //   width: 20%;
+  // }
 }
 
-// .order-details-header {
-//   outline: 2px solid dodgerblue;
-//   display: flex;
-//   flex-flow: row wrap;
-//   height: 25%;
-//   justify-content: space-between;
-// }
-
 .items-list {
-  width: 80%;
   height: 100%;
   display: flex;
   background-color: wheat;
-  overflow-y: auto;
+  overflow: auto;
   flex-flow: column nowrap;
+  // justify-content: center;
+  align-items: center;
   padding-top: 1rem;
 }
 
 .ordered-item {
   display: flex;
-  flex-flow: row wrap;
-  align-items:center;
-  justify-content:space-evenly;
-  border: 1px solid;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  border: 3px solid;
   margin: .75rem 0;
+  width: 75%;
+  max-height: 100%;
+  padding: 1rem 0;
+  border-radius: 5px;
 
   &--item-icon {
-    max-width: 4.5rem;
+    max-width: 7.5rem;
+  }
 
+  &--item-name {
+    width: 40%;
   }
 }
 
