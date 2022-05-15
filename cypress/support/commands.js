@@ -33,5 +33,15 @@ Cypress.Commands.add('clearCart', () => {
       return
     }
   })
-  
+})
+
+Cypress.Commands.add('placeOrder', () => {
+  cy.addToCart()
+  cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
+    fixture: 'brews'
+  })
+  .visit('http://localhost:3000/cart/')
+  cy.get('.place-order--btn')
+  .click()
+  .visit('http://localhost:3000/orders/')
 })

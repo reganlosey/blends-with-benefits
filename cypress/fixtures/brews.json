@@ -16,14 +16,6 @@
   },
   {
     "id": 3,
-    "productName": "Peruvian Arabica",
-    "type": "Coffee",
-    "price": 10,
-    "hasCaffeine": false,
-    "quantity": 0
-  },
-  {
-    "id": 4,
     "productName": "Vietnam Robusta",
     "type": "Espresso",
     "price": 15,
@@ -31,15 +23,15 @@
     "quantity": 0
   },
   {
-    "id": 5,
-    "productName": "Guatemala Robusta",
-    "type": "Espresso",
-    "price": 15,
-    "hasCaffeine": true,
+    "id": 4,
+    "productName": "Mint",
+    "type": "Tea",
+    "price": 10,
+    "hasCaffeine": false,
     "quantity": 0
   },
   {
-    "id": 6,
+    "id": 5,
     "productName": "Chamomile",
     "type": "Tea",
     "price": 10,
@@ -47,48 +39,8 @@
     "quantity": 0
   }, 
   {
-    "id": 7,
+    "id": 6,
     "productName": "Lemon",
-    "type": "Tea",
-    "price": 10,
-    "hasCaffeine": false,
-    "quantity": 0
-  }, 
-  {
-    "id": 8,
-    "productName": "Mint",
-    "type": "Tea",
-    "price": 10,
-    "hasCaffeine": false,
-    "quantity": 0
-  }, 
-  {
-    "id": 9,
-    "productName": "Darjeeling",
-    "type": "Tea",
-    "price": 10,
-    "hasCaffeine": true,
-    "quantity": 0
-  }, 
-  {
-    "id": 10,
-    "productName": "Earl Grey",
-    "type": "Tea",
-    "price": 10,
-    "hasCaffeine": true,
-    "quantity": 0
-  }, 
-  {
-    "id": 11,
-    "productName": "Chai Tea",
-    "type": "Tea",
-    "price": 10,
-    "hasCaffeine": true,
-    "quantity": 0
-  }, 
-  {
-    "id": 12,
-    "productName": "Lavender",
     "type": "Tea",
     "price": 10,
     "hasCaffeine": false,
