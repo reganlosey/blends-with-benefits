@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { persistor } from '../../redux/store';
 import { addItemToCart, removeItemFromCart, clearCart } from '../../redux/cartSlice';
 import { placeOrder } from '../../redux/orderSlice';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
 import beansIcon from '../../assets/coffee-pot.svg';
 import teaBagIcon from '../../assets/tea-cup.svg';
 
@@ -22,11 +22,10 @@ const Cart = () => {
       currency: "USD"
     })
   }
-  // persistor.purge()
 
   useEffect(() => {
     calculateTotals()
-  }, [])
+  }, [subTotal, cartItems])
 
   const calculateTotals = () => {
     const totals = cartItems.reduce((sum, item) => {
@@ -35,17 +34,18 @@ const Cart = () => {
     }, 0)
 
     setSubTotal(totals)
-    if (totals < 20 && totals > 0) {
+    if (totals < 20) {
       setShippingCost(5)
-    } else if (totals > 20) {
+    } else {
       setShippingCost(0)
     }
-    return subTotal
   }
 
 
   const adjustQuantity = (e, id) => {
+    e.preventDefault()
     const adjustment = cartItems.forEach((brew) => {
+      console.log(id)
       const matchedBrew = brew.id === id
       if (e.target.className.includes('increase') && matchedBrew) {
         dispatch(addItemToCart({
@@ -67,8 +67,6 @@ const Cart = () => {
           quantity: brew.quantity
         }))
         calculateTotals()
-      } else if (e.target.className.includes('remove') && matchedBrew) {
-        brew.quantity = 0;
       }
     })
   }
