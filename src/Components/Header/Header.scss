@@ -1,17 +1,40 @@
 @use '../../sass/variables'as *;
 
 .header {
-  outline: 3px solid red;
-  font-size: 1.1rem;
+  // outline: 3px solid red;
   display: flex;
-  padding: 1rem;
-  align-items: center;
+  padding: 1rem 1rem 0 .5rem;
+  // flex-flow: row wrap;
   justify-content: space-between;
+  align-items:flex-end;
+}
+
+
+.header-left {
+  // display: flex;
+  float: left;
+
+}
+
+.header-right {
+display:flex;
+flex-flow:row nowrap;
+justify-content:space-between;
+align-content:baseline;
 }
 
 .site-logo {
-  max-width:5.5em;
-  margin: 0 1rem;
-  filter:drop-shadow(-1px 1px 0px black)
+  max-width: 5em;
+  filter: drop-shadow(-1px 1px 1px black);
 }
 
+.orders-img,
+.cart-img {
+  height:1.5em;
+  // box-shadow: 10px 10px 10px black;
+  filter: drop-shadow(-1px 1px 2px black);
+}
+
+.cart-img{
+  margin:0 1rem;
+}
