@@ -6,7 +6,15 @@
   padding: 1rem 1rem 0 .5rem;
   // flex-flow: row wrap;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items: flex-end;
+}
+
+.header-link:visited > {
+  img {
+  border: 4px solid dodgerblue;
+  background-color: whitesmoke;
+  transform:scaleY(1.1);
+}
 }
 
 
@@ -17,10 +25,10 @@
 }
 
 .header-right {
-display:flex;
-flex-flow:row nowrap;
-justify-content:space-between;
-align-content:baseline;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-content: baseline;
 }
 
 .site-logo {
@@ -30,11 +38,11 @@ align-content:baseline;
 
 .orders-img,
 .cart-img {
-  height:1.5em;
+  height: 1.5em;
   // box-shadow: 10px 10px 10px black;
   filter: drop-shadow(-1px 1px 2px black);
 }
 
-.cart-img{
-  margin:0 1rem;
+.cart-img {
+  margin: 0 1rem;
 }

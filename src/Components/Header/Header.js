@@ -5,6 +5,7 @@ import cartText from '../../assets/cart-txt-vctr.svg'
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+
   return (
     <header className="header">
       <div className="header-left">
@@ -13,7 +14,7 @@ const Header = () => {
         </Link>
       </div>
       <div className="header-right">
-        <Link to="/orders" className="header-link" >
+        <Link to="/orders" className="header-link">
           <img className="orders-img" src={ordersText} alt="img of the word orders" />
         </Link>
         <Link to="/cart" className="header-link" >
