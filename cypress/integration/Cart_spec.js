@@ -92,4 +92,22 @@ describe('Cart', () => {
     .get('.place-order--final-total')
     .should('contain', '$15.80')
   })
+
+  it('should clear the cart once an order is placed', () => {
+    cy.get('.place-order--btn')
+    .click()
+    .get('.cart-totals--subtotal')
+    .should('contain', '$0.00')
+    .get('.cart-content-container')
+    .get(':nth-child(1) > .cart-counter')
+    .should('not.exist')
+  })
+
+  it('should not allow the user to place an order without a subtotal', () => {
+    cy.get('.cart-totals--subtotal')
+    .contains('$0.00')
+    .get('.place-order--btn')
+    .should('have.attr', 'disabled', 'disabled')
+    .and('have.css', 'cursor', 'not-allowed')
+  })
 })
