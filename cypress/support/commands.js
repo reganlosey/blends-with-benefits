@@ -15,3 +15,23 @@ Cypress.Commands.add('addToCart',() => {
       })
       .visit('http://localhost:3000/cart/')
 })
+
+Cypress.Commands.add('clearCart', () => {
+  cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
+    fixture: 'brews'
+  })
+  .visit('http://localhost:3000/cart/')
+  cy.get('.cart-content-container')
+  .children()
+  .its('length')
+  .then(numOfItems => {
+    for (let i = 2; i <= numOfItems; i++) {
+      cy.get('.cart-counter > .cart-counter--decrease-btn')
+        .click({
+          multiple: true
+        })
+      return
+    }
+  })
+  
+})

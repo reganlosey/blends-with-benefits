@@ -77,6 +77,19 @@ describe('Cart', () => {
     .click()
     cy.get('.cart-totals--shipping')
     .contains('Free!')
-
+  })
+  
+  it('should calculate the totals correctly', () => {
+    cy.get('.cart-content-container')
+    .get(':nth-child(1) > .cart-counter > .cart-counter--decrease-btn')
+    .click()
+    cy.get('.cart-totals--subtotal')
+    .should('contain', '$10.00')
+    .get('.cart-totals--shipping')
+    .should('contain', '$5.00')
+    .get('.cart-totals--tax')
+    .should('contain', '$0.80')
+    .get('.place-order--final-total')
+    .should('contain', '$15.80')
   })
 })
