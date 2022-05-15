@@ -8,13 +8,15 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <img className="site-logo" src={siteLogo} alt="the letters BWB" />
+        <Link to="/" className="header-link" >
+          <img className="site-logo" src={siteLogo} alt="the letters BWB" />
+        </Link>
       </div>
       <div className="header-right">
-        <Link to="/orders">
+        <Link to="/orders" className="header-link" >
           <img className="orders-img" src={ordersText} alt="img of the word orders" />
         </Link>
-        <Link to="/cart">
+        <Link to="/cart" className="header-link" >
           <img className="cart-img" src={cartText} alt="img of the word cart" />
         </Link>
       </div>
