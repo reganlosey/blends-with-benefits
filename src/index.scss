@@ -33,9 +33,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a {
+
+a{
   text-decoration: none;
   color: inherit;
+  display:block;
+  width:fit-content;
+  height:fit-content;
 }
 
 /*

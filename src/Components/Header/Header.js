@@ -1,21 +1,28 @@
 import './Header.scss'
+import siteLogo from '../../assets/site-logo-vctr.svg';
+import ordersText from '../../assets/orders-txt-vctr.svg';
+import cartText from '../../assets/cart-txt-vctr.svg'
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+
   return (
     <header className="header">
-      <div className="header header__left">
-        <Link to="/" className="header-link header-link--home">BWB</Link>
+      <div className="header-left">
+        <Link to="/" className="header-link" >
+          <img className="site-logo" src={siteLogo} alt="the letters BWB" />
+        </Link>
       </div>
-      <div className="header header__center">
-        <Link to="/shop" className="header-link header-link--shop">All Brews</Link>
-        <Link to="/shop/coffee" className="header-link header-link--coffee">Coffee</Link>
-        <Link to="/shop/tea" className="header-link header-link--tea">Tea</Link>
+      <div className="header-right">
+        <Link to="/orders" className="header-link">
+          <img className="orders-img" src={ordersText} alt="img of the word orders" />
+        </Link>
+        <Link to="/cart" className="header-link" >
+          <img className="cart-img" src={cartText} alt="img of the word cart" />
+        </Link>
       </div>
-      <div className="header header__right">
-        <Link to="/orders" className="header-link header-link--profile">Your Orders</Link>
-        <Link to="/cart" className="header-link header-link--cart">Your Cart</Link>
-      </div>
+
+
     </header>
   )
 
