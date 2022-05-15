@@ -50,7 +50,8 @@
   align-items: center;
   justify-content: space-between;
   padding: .5rem 1rem;
-  outline:2px solid magenta;
+  border-bottom: 1px solid black;
+  margin: .25rem;
 
   &--item-icon {
     max-width: 3.5rem;
@@ -92,6 +93,13 @@
     cursor: pointer;
     background-color: $accent-color-two;
   }
+
+  > button{
+    &:hover{
+      background-color:black;
+      color: $primary-color;
+    }
+  }
 }
 
 .cart-prices {
@@ -101,8 +109,6 @@
 
 
 .cart-sidebar {
-  // width: 35%;
-  outline: 2px solid magenta;
   height: 90%;
   font-size: 1.5rem;
   display: flex;
@@ -141,6 +147,11 @@
     &:active:enabled {
       transform: translateY(2px);
       box-shadow: 5px 3px 0px 3px black;
+    }
+
+    &:hover:enabled{
+      background-color: $secondary-color;
+      color:$primary-color;
     }
 
   }

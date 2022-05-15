@@ -11,16 +11,16 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   letter-spacing: 2px;
   text-align: center;
   padding: 1rem;
-  height:40%;
+  height: 40%;
 
   &--heading {
     color: $primary-color;
     text-shadow: 1px 1px 2px black;
-    filter:drop-shadow(-2px 2px 0px rgba(0, 0, 0, 0.583));
+    filter: drop-shadow(-2px 2px 0px rgba(0, 0, 0, 0.583));
     font-size: 5.75vw;
   }
 
@@ -40,17 +40,17 @@
       0px 2px 0px black,
       2px 0px 0px black,
       -2px 0px 0px black,
-      -5px 4px 0px $secondary-color,
-      -7px 6px 0px $accent-color-three,
-      -9px 8px 0px $accent-color-two,
-      -10px 9px 0px black,
+      -6px 3px 0px $secondary-color,
+      -9px 5px 0px $accent-color-three,
+      -12px 7px 0px $accent-color-two,
+      -15px 9px 0px black,
   }
 
 }
 
 
 .browse-wrapper {
-  border:102px dodgerblue;
+  border: 102px dodgerblue;
   font-size: 2.5vw;
   display: flex;
   flex-flow: row wrap;
@@ -58,17 +58,18 @@
 
   &--coffee-btn,
   &--tea-btn {
-    color: black;
-    box-shadow: 7px 5px 0px 3px $primary-color;
+    color: $primary-color;
+    box-shadow: 7px 5px 0px 3px #2d2d2d;
+    text-shadow: 1px 0px 0px black;
     border: 2px solid black;
     border-radius: 10px;
-    padding:.2rem 1rem;
+    padding: .2rem 1rem;
     transition: all 50ms ease;
     cursor: pointer;
 
     &:active {
-      transform: translateY(2px);
-      box-shadow: 5px 3px 0px 3px $primary-color;
+      transform: translateY(3px);
+      box-shadow: 3px 2px 0px 2px black;
     }
 
   }
