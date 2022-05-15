@@ -1,6 +1,6 @@
 import './Header.scss'
 import siteLogo from '../../assets/site-logo-vctr.svg';
-import ordersText from '../../assets/order-txt-vctr.svg';
+import ordersText from '../../assets/orders-txt-vctr.svg';
 import cartText from '../../assets/cart-txt-vctr.svg'
 import { Link } from 'react-router-dom';
 
