@@ -12,7 +12,7 @@ describe('Shop', () => {
   it('should render all coffee and tea cards', () => {
     cy.get('.brew-cards')
       .children('.brew-card')
-      .then(cards => expect(cards.length).to.eq(12))
+      .then(cards => expect(cards.length).to.eq(6))
   })
 
   it('all cards should contain a button to add the item to cart', () => {
@@ -28,7 +28,7 @@ describe('Shop', () => {
     cy.visit('http://localhost:3000/shop/tea')
       .get('.brew-cards')
       .children('.brew-card')
-      .then(teaCards => expect(teaCards.length).to.eq(7))
+      .then(teaCards => expect(teaCards.length).to.eq(3))
       .each(() => {
         cy.get('.brew-info > .brew-info__body')
           .should('contain', 'Tea')

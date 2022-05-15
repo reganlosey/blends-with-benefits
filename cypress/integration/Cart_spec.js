@@ -7,7 +7,7 @@ describe('Cart', () => {
     cy.get('.cart')
       .get('.cart-content-container')
       .children('.cart-item')
-      .then(cartItems => expect(cartItems.length).to.eq(12))
+      .then(cartItems => expect(cartItems.length).to.eq(6))
       .reload()
   })
 
