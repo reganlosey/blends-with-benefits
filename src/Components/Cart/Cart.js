@@ -108,7 +108,7 @@ const Cart = () => {
           <p className="item-details--item-pounds">${item.price}/lb</p>
         </div>
         <div className="cart-counter">
-          <button className="cart-counter--decrease-btn" onClick={(e) => adjustQuantity(e, item.id)}>-</button>
+          <button className="cart-counter--decrease-btn" disabled={item.quantity ? false : true} onClick={(e) => adjustQuantity(e, item.id)}>-</button>
           <p className="cart-counter--num-items">{item.quantity} lbs</p>
           <button className="cart-counter--increase-btn" onClick={(e) => adjustQuantity(e, item.id)}>+</button>
         </div>

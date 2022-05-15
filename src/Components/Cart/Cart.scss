@@ -92,10 +92,14 @@
     border: none;
     cursor: pointer;
     background-color: $accent-color-two;
+    &:disabled{
+      cursor:not-allowed;
+      background-color: #b1b1b1;
+    }
   }
 
   > button{
-    &:hover{
+    &:hover:enabled{
       background-color:black;
       color: $primary-color;
     }
