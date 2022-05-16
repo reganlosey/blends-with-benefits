@@ -92,15 +92,16 @@
     border: none;
     cursor: pointer;
     background-color: $accent-color-two;
-    &:disabled{
-      cursor:not-allowed;
+
+    &:disabled {
+      cursor: not-allowed;
       background-color: #b1b1b1;
     }
   }
 
-  > button{
-    &:hover:enabled{
-      background-color:black;
+  >button {
+    &:hover:enabled {
+      background-color: black;
       color: $primary-color;
     }
   }
@@ -153,9 +154,9 @@
       box-shadow: 5px 3px 0px 3px black;
     }
 
-    &:hover:enabled{
+    &:hover:enabled {
       background-color: $secondary-color;
-      color:$primary-color;
+      color: $primary-color;
     }
 
   }

@@ -5,7 +5,8 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <div className="intro">
-        <p className="intro--heading">Hey There Hot Stuff, Welcome To</p>
+        <p className="intro--heading">Hey there hot stuff, </p>
+        <p className="intro--subheading">welcome to</p>
         <h1 className="intro--site-name">BLENDS WITH BENEFITS</h1>
       </div>
       <div className="browse-wrapper">
