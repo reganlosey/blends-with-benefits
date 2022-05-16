@@ -34,15 +34,15 @@
   &--site-name {
     font-size: 8.5vw;
     font-style: italic;
-    // filter: drop-shadow(-.25vw .25vw 0px rgba(0, 0, 0, 0.583));
+    filter: drop-shadow(-.5vw .35vw 0px black);
     color: $primary-color;
-    text-shadow:
-      -.1vw 0px .5px black,
-      0px .1vw .5px black,
-      -.35vw .15vw 0px $secondary-color,
-      -.65vw .25vw 0px $accent-color-three,
-      -.95vw .5vw 0px $accent-color-two,
-      -1.15vw .75vw 0px black,
+    // text-shadow:
+    //   -.1vw 0px .5px black,
+    //   0px .1vw .5px black,
+    //   -.35vw .15vw 0px $secondary-color,
+    //   -.65vw .25vw 0px $accent-color-three,
+    //   -.95vw .5vw 0px $accent-color-two,
+    //   -1.15vw .75vw 0px black,
   }
 
 }
