@@ -125,7 +125,7 @@ const Cart = () => {
           Your Cart
         </h3>
         <div className="cart-content-container">
-          {cartItems.length ? allItems : <p className="empty-txt">Looks like your cart needs a refill...</p>}
+          {cartItems.length ? allItems : <p className="empty-txt">Your cart's looking a little...emp-tea</p>}
         </div>
         <div className="cart-sidebar">
           <div className="cart-totals">

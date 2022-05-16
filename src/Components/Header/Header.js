@@ -1,25 +1,28 @@
 import './Header.scss'
 import siteLogo from '../../assets/site-logo-vctr.svg';
-import ordersText from '../../assets/orders-txt-vctr.svg';
-import cartText from '../../assets/cart-txt-vctr.svg'
-import { Link } from 'react-router-dom';
+import ordersText from '../../assets/orders-txt-vctr.png';
+import cartText from '../../assets/cart-txt-vctr.png'
+import { NavLink} from 'react-router-dom';
 
 const Header = () => {
 
   return (
     <header className="header">
       <div className="header-left">
-        <Link to="/" className="header-link" >
+        <NavLink to="/" className="header-link" >
           <img className="site-logo" src={siteLogo} alt="the letters BWB" />
-        </Link>
+        </NavLink>
       </div>
       <div className="header-right">
-        <Link to="/orders" className="header-link">
-          <img className="orders-img" src={ordersText} alt="img of the word orders" />
-        </Link>
-        <Link to="/cart" className="header-link" >
-          <img className="cart-img" src={cartText} alt="img of the word cart" />
-        </Link>
+        <NavLink to="/orders" className={(navData) => navData.isActive ? 'header-active' : 'orders-link'}>
+          {/* <p className="orders-link-txt">ORDERS</p> */}
+          ORDERS
+          {/* <img className="orders-img" src={ordersText} alt="img of the word orders" /> */}
+        </NavLink>
+        <NavLink to="/cart" className={(navData) => navData.isActive ? 'header-active' : 'cart-link'} >
+          {/* <img className="cart-img" src={cartText} alt="img of the word cart" /> */}
+          <p className="cart-link-txt">CART</p>
+        </NavLink>
       </div>
 
 

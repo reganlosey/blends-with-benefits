@@ -37,13 +37,8 @@
     // filter: drop-shadow(-.25vw .25vw 0px rgba(0, 0, 0, 0.583));
     color: $primary-color;
     text-shadow:
-      // .1vw 0px 0px black,
       -.1vw 0px .5px black,
       0px .1vw .5px black,
-      // 0px -.5vw 0px black,
-      // 0px .5vw 0px black,
-      // .5vw 0px 0px black,
-      // -.5vw 0px 0px black,
       -.35vw .15vw 0px $secondary-color,
       -.65vw .25vw 0px $accent-color-three,
       -.95vw .5vw 0px $accent-color-two,
