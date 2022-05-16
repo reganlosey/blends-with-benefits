@@ -4,56 +4,85 @@
   // outline: 3px solid red;
   display: flex;
   padding: .5rem;
-  margin: 0 .75rem;
+  letter-spacing: .075vw;
+  width: 100%;
+  margin: 0 auto;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: flex-end;
-  background-color:rgba(117, 165, 160, 0);
+  align-items: center;
+  background-color: $secondary-color;
   border: 3px solid #000000;
-  border-radius:5px;
-  box-shadow: 0px 3px 8px #434141;
+  // box-shadow: 0px 2px 3px #000000;
+}
+
+.header-center {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  min-width: 30%;
+  // width: 40%;
+  // max-width:45%;
 }
 
 .header-right {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: baseline;
+  min-width: 15%;
 }
 
 .site-logo {
   max-width: 12vh;
+  padding: .75vw 1vw;
+  border: .1rem solid $primary-color;
   border-radius: 10px;
-  border: 2px solid black;
-  padding: 1rem;
 }
 
-.orders-link,
-.cart-link,
-.header-active {
+.nav-link,
+.nav-link-a {
+  // background-color: black;
   background-color: none;
   border-radius: 10px;
-  border: .15vw solid black;
-  padding: .5vw .75vw;
-  font-size: 1.25rem;
-  color:$primary-color;
-  text-shadow: 1px 1px 0px black;
+  // border: .1rem solid black;
+  padding: .25rem 1rem;
+  font-size: 1.75vw;
+  color:black;
+  color: $primary-color;
+  text-shadow: 1px 1px 2px black,
+    -1px 2px 1px black;
+
   &:hover {
-    background-color: $accent-color-three;
-    color: $primary-color;
+    outline: 1px solid $primary-color;
   }
 }
 
-// .orders-link-txt, .cart-link-txt{
-//   font-size: 1.5rem;
-// }
+.nav-link-a {
+  color:$primary-color;
+  outline:1px solid black;
+  
+  &--coffee {
+    background-color: #a47c6c;
 
-.header-active {
-  background-color: $secondary-color;
-  color: $primary-color;
-
+    &:hover {
+      background-color: #a47c6c;
+    }
+  }
+  &--tea{
+    background-color:#7ea46c;
+  }
 }
 
-// .cart-img {
-//   margin: 0 2rem;
+// .orders-link,
+// .cart-link,
+// .coffee-link,
+// .tea-link,
+// .shop-link, .header-active {
+//   background-color: none;
+//   border-radius: 10px;
+//   border: .15vw solid black;
+//   padding: .5vw .75vw;
+//   font-size: 1.25rem;
+//   color: $primary-color;
+//   text-shadow: 1px 1px 0px black;
 // }
