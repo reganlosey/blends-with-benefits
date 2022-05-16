@@ -20,10 +20,10 @@ export const cartSlice = createSlice({
     },
     removeItemFromCart: (state, action) => {
       const foundItem = state.items.find((item) => item.id === action.payload.id)
-      if (foundItem) {
+      if (foundItem && foundItem.quantity > 1) {
         foundItem.quantity -= 1
-      } else {
-        throw new Error("Item not found")
+      } else if (foundItem.quantity === 1) {
+        state.items.splice(foundItem, 1)
       }
     },
     clearCart: (state, action) => {
