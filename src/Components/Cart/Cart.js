@@ -108,7 +108,7 @@ const Cart = () => {
           <p className="item-details--item-pounds">${item.price}/lb</p>
         </div>
         <div className="cart-counter">
-          <button className="cart-counter--decrease-btn" onClick={(e) => adjustQuantity(e, item.id)}>-</button>
+          <button className="cart-counter--decrease-btn" disabled={item.quantity ? false : true} onClick={(e) => adjustQuantity(e, item.id)}>-</button>
           <p className="cart-counter--num-items">{item.quantity} lbs</p>
           <button className="cart-counter--increase-btn" onClick={(e) => adjustQuantity(e, item.id)}>+</button>
         </div>
@@ -125,7 +125,7 @@ const Cart = () => {
           Your Cart
         </h3>
         <div className="cart-content-container">
-          {cartItems.length ? allItems : <p className="empty-txt">Looks like your cart needs a refill...</p>}
+          {cartItems.length ? allItems : <p className="empty-txt">Your cart's looking a little...emp-tea</p>}
         </div>
         <div className="cart-sidebar">
           <div className="cart-totals">

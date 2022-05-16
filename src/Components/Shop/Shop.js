@@ -1,10 +1,11 @@
 import './Shop.scss';
 import Brew from '../Brew/Brew';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Shop = ({ addToCart }) => {
   const allBrews = useSelector((state) => state.brews.allBrews)
+  const navigate = useNavigate()
   const params = useParams()
   const reqParams = useParams().query === 'coffee' ? ['espresso', 'coffee'] : 'tea';
   const brewCards = allBrews.reduce((arr, brew) => {
@@ -22,6 +23,8 @@ const Shop = ({ addToCart }) => {
       arr.push(brewCard)
     } else if (!params.query && !arr.includes(brewCard)) {
       arr.push(brewCard)
+    } else {
+      // navigate('/*')
     }
     return arr
   }, [])

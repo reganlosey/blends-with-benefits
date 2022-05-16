@@ -1,9 +1,9 @@
 @use '../../sass/variables'as *;
 
 .shop {
-  border: 2px solid magenta;
   display: flex;
   flex-direction: column;
+  text-shadow: 1px 0px 0px black;
 }
 
 .brew-cards {
