@@ -27,26 +27,27 @@
   &--subheading {
     color: $primary-color;
     text-shadow: .15vw .15vw 0vw black;
-    // filter: drop-shadow(-.25vw .25vw 0px rgba(0, 0, 0, 0.583));
     font-size: 4vw;
-
+    
   }
-
+  
   &--site-name {
     font-size: 8.5vw;
     font-style: italic;
+    // filter: drop-shadow(-.25vw .25vw 0px rgba(0, 0, 0, 0.583));
     color: $primary-color;
-    text-shadow: 1px 0px 0px black,
-      -1px 0px 0px black,
-      0px 1px 0px black,
-      0px -2px 0px black,
-      0px 2px 0px black,
-      2px 0px 0px black,
-      -2px 0px 0px black,
-      -6px 3px 0px $secondary-color,
-      -9px 5px 0px $accent-color-three,
-      -12px 7px 0px $accent-color-two,
-      -15px 9px 0px black,
+    text-shadow:
+      // .1vw 0px 0px black,
+      -.1vw 0px .5px black,
+      0px .1vw .5px black,
+      // 0px -.5vw 0px black,
+      // 0px .5vw 0px black,
+      // .5vw 0px 0px black,
+      // -.5vw 0px 0px black,
+      -.35vw .15vw 0px $secondary-color,
+      -.65vw .25vw 0px $accent-color-three,
+      -.95vw .5vw 0px $accent-color-two,
+      -1.15vw .75vw 0px black,
   }
 
 }
@@ -63,7 +64,7 @@
   &--tea-btn {
     color: $primary-color;
     box-shadow: 7px 5px 0px 3px #2d2d2d;
-    text-shadow: 1px 0px 0px black;
+    text-shadow: .25vw 0px 0px black;
     border: 2px solid black;
     border-radius: 10px;
     padding: .2rem 1rem;
