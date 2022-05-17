@@ -63,8 +63,5 @@ describe("Header", () => {
       .url('eq','http://localhost:3000/orders')
       .get('.nav-link-a--orders')
       .should('exist')
-
-
-
   })
 })
