@@ -8,7 +8,8 @@ const Header = () => {
     <header className="header">
       <div className="header-left">
         <NavLink to="/" className="home-link" >
-          <img className="site-logo" src={siteLogo} alt="the letters BWB" />
+          {/* <img className="site-logo" src={siteLogo} alt="the letters BWB" /> */}
+          BWB
         </NavLink>
       </div>
       <div className="header-center">

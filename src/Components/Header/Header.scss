@@ -8,48 +8,51 @@
   justify-content: space-between;
   align-items: center;
   font-size: 1.25em;
+  padding: 0 .35rem;
 }
 
-.header-left{
-  // outline:1px solid red;
-  float:left;
+.header-left {
+  float: left;
 }
 
 
 .header-center {
   display: flex;
   flex-flow: row nowrap;
-  margin:0 auto;
-  // outline:1px solid red;
+  margin: 0 auto;
 }
 
 .header-right {
-  // display: flex;
-  // flex-flow: row nowrap;
-  // outline:1px solid red;
-  float:right;
+  float: right;
 }
 
 .site-logo {
-  max-width: 9vh;
+  max-width: 11vh;
   border-radius: 10px;
-  filter:drop-shadow(1px 1px 1px black)
+  filter: drop-shadow(1px 1px 1px black)
+}
+
+.home-link {
+  color: $primary-color;
+  font-size: 2.5rem;
+  text-shadow:
+    -.1vw 0px .5px black,
+    0px .1vw .5px black,
+    -.15vw .05vw 0px $secondary-color,
+    -.2vw .15vw 0px $accent-color-three,
+    -.3vw .2vw 0px $accent-color-two,
 }
 
 .nav-link,
 .nav-link-a {
-  background-color:  $primary-color;
+  background-color: $primary-color;
   background-color: none;
   outline: 1px solid black;
   border-radius: 10px;
   padding: .25rem 1rem;
-  // font-size: 1.75vw;
-  color:black;
+  font-size: 1.25rem;
+  color: black;
   margin: .25rem;
-  // color: $primary-color;
-  // text-shadow: 1px 1px 0px $primary-color,
-  //   -1px 0px 0px $primary-color,
-  //   0px 0px 1px black;
 
   &:hover {
     outline: 1px solid black;
@@ -57,11 +60,9 @@
 }
 
 .nav-link-a {
-  color:$primary-color;
-  outline:1px solid black;
-  // text-shadow: 1px 1px 0px #000000,
-  // -1px 1px 1px #000000;
-  
+  color: $primary-color;
+  outline: 1px solid black;
+
   &--coffee {
     background-color: #a47c6c;
 
@@ -69,18 +70,18 @@
       background-color: #a47c6c;
     }
   }
-  &--tea{
-    background-color:#7ea46c;
+
+  &--tea {
+    background-color: #7ea46c;
   }
 
-  &--cart{
-    color:black;
-    background-color:#f49787;
+  &--cart {
+    color: black;
+    background-color: #f49787;
   }
-  
-  &--orders{
-    color:black;
-    background-color:$accent-color-three;
+
+  &--orders {
+    color: black;
+    background-color: $accent-color-three;
   }
 }
-
