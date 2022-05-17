@@ -13,13 +13,12 @@
 
 .intro {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   text-align: center;
   align-items: center;
   letter-spacing: 3px;
-  height:50%;
-  // outline: 3px solid black;
+  height:40%;
   border-radius: 5px;
 
   &--heading {
@@ -69,17 +68,16 @@
 
 .brief {
   // font-family: "Lobster Two", cursive;
+  background-color:black;
   color:$primary-color;
 	flex-direction: column;
 	align-items: center;
 	justify-content:space-around;
 	margin: 0 auto;
-	// font-weight: 500;
   font-style:italic;
   letter-spacing: 1px;
-	font-size: 1.85rem;
-	width: 70%;
-	height: 10%;
+	font-size: 2.2vw;
+	width: 80%;
 	display: flex;
 	text-align: center;
 
