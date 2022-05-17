@@ -66,7 +66,7 @@ describe('Cart', () => {
       .contains('$5.00')
   })
 
-  it.skip('should provide free shipping for orders over $20', () => {
+  it('should provide free shipping for orders over $20', () => {
     cy.get('.cart-content-container')
       .get(':nth-child(1) > .cart-counter > .cart-counter--increase-btn')
       .click()
@@ -74,7 +74,7 @@ describe('Cart', () => {
       .contains('Free!')
   })
 
-  it.skip('should calculate the totals correctly', () => {
+  it('should calculate the totals correctly', () => {
     cy.get('.cart-content-container')
       .get(':nth-child(1) > .cart-counter > .cart-counter--decrease-btn')
       .click()
@@ -88,7 +88,7 @@ describe('Cart', () => {
       .should('contain', '$15.80')
   })
 
-  it.skip('should clear the cart once an order is placed', () => {
+  it('should clear the cart once an order is placed', () => {
     cy.get('.place-order--btn')
       .click()
       .get('.cart-totals--subtotal')
@@ -98,7 +98,7 @@ describe('Cart', () => {
       .should('not.exist')
   })
 
-  it.skip('should not allow the user to place an order without a subtotal', () => {
+  it('should not allow the user to place an order without a subtotal', () => {
     cy.get('.cart-totals--subtotal')
       .contains('$0.00')
       .get('.place-order--btn')
