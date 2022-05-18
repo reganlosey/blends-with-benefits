@@ -8,7 +8,17 @@
   height:100%;
   width:100%;
   position:fixed;
-  // background-color:$secondary-color;
+
+}
+
+.intro-container{
+  height: 65%;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .intro {
@@ -17,9 +27,11 @@
   justify-content: center;
   text-align: center;
   align-items: center;
-  letter-spacing: 3px;
-  height:40%;
-  border-radius: 5px;
+  height: 95%;
+  border-radius: 15px;
+  background-color: black;
+  width: 90%;
+  margin: 0 auto;
 
   &--heading {
     font-family: "Oleo Script", cursive;
@@ -37,8 +49,6 @@
   &--site-name {
     font-family: "Oleo Script", cursive;
     font-size: 8.5vw;
-    // font-style: italic;
-    // box-shadow: 0px .35vw 10px 0px black;
     filter:drop-shadow(2px 2px 2px black);
     color: $primary-color;
     text-shadow:
@@ -51,76 +61,11 @@
   }
 
   &--tagline{
-    font-family: "Oleo Script", cursive;
-    font-size:4vw;
-    font-style:italic;
+    font-family: "Hepta Slab", cursive;
+    font-size:2vw;
     color:$primary-color;
-    text-shadow: .15vw .15vw 0vw black,
-      -.1vw -.05vw 0.2vw black,
-      -.1vw -.05vw .1vw black,
-      -.1vw -.05vw .5vw black,
-      -.1vw -.05vw .6vw black,
-    ;
   }
   
   
 }
 
-.brief {
-  // font-family: "Lobster Two", cursive;
-  background-color:black;
-  color:$primary-color;
-	flex-direction: column;
-	align-items: center;
-	justify-content:space-around;
-	margin: 0 auto;
-  font-style:italic;
-  letter-spacing: 1px;
-	font-size: 2.2vw;
-	width: 80%;
-	display: flex;
-	text-align: center;
-
-  // text-align:justify;
-  text-shadow: .02vw .02vw 0vw black,
-    -.1vw -.05vw .2vw black,
-    -.1vw -.05vw .3vw black,
-    -.1vw -.05vw .4vw black;
-  &--top{
-    
-  }
-}
-
-// .browse-wrapper {
-//   border: 102px dodgerblue;
-//   font-size: 2.5vw;
-//   display: flex;
-//   flex-flow: row wrap;
-//   justify-content: space-evenly;
-
-//   &--coffee-btn,
-//   &--tea-btn {
-//     color: $primary-color;
-//     box-shadow: 7px 5px 0px 3px #2d2d2d;
-//     text-shadow: .25vw 0px 0px black;
-//     border: 2px solid black;
-//     border-radius: 10px;
-//     padding: .2rem 1rem;
-//     transition: all 50ms ease;
-//     cursor: pointer;
-
-//     &:active {
-//       transform: translateY(3px);
-//       box-shadow: 3px 2px 0px 2px black;
-//     }
-
-//   }
-
-//   &--coffee-btn {
-//     background-color: #a47c6c;
-//   }
-
-//   &--tea-btn {
-//     background-color: #7ea46c;
-//   }
-// }

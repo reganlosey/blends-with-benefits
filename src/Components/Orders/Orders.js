@@ -1,6 +1,6 @@
 import './Orders.scss';
-import beansIcon from '../../assets/coffee-pot.svg';
-import teaBagIcon from '../../assets/tea-cup.svg';
+import coffeePotIcon from '../../assets/coffee-pot.svg';
+import teaCupIcon from '../../assets/tea-cup.svg';
 import { useSelector } from 'react-redux';
 
 
@@ -31,13 +31,11 @@ const Orders = () => {
         {order.map((item) =>
           <div key={item.id}
             className="ordered-item">
-            <img className="ordered-item--item-icon" src={item.type === "Tea" ? teaBagIcon : beansIcon} />
-            <p className="ordered-item--item-name">{item.productName} :(x {item.quantity}lbs)</p>
+            <img className="ordered-item--item-icon" src={item.type === "Tea" ? teaCupIcon : coffeePotIcon} />
+            <p className="ordered-item--item-name">{item.productName} ({item.quantity} lbs)</p>
           </div>)
         }
       </div>
-      {/* <div className="order-card--footer"> */}
-      {/* </div> */}
     </div>
   })
 
@@ -46,7 +44,7 @@ const Orders = () => {
     <div className="orders">
       <div className="order-card-container">
         <h3 className="order-card-container--header"> Your Orders</h3>
-        {allOrders.length ? orderCards : <p className="empty-orders-txt">Awful quiet in here...</p>}
+        {allOrders.length ? orderCards : <p className="empty-orders-txt">Kind of lonely in here...</p>}
       </div>
     </div>
 

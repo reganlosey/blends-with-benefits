@@ -1,6 +1,5 @@
 import './Cart.scss'
 import { useState, useEffect } from 'react';
-import { persistor } from '../../redux/store';
 import { addItemToCart, removeItemFromCart, clearCart } from '../../redux/cartSlice';
 import { placeOrder } from '../../redux/orderSlice';
 import { useSelector, useDispatch} from "react-redux";
