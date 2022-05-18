@@ -4,85 +4,123 @@
 
 
 .homepage {
-  // border: 3px solid magenta;
+  color: black;
+  height:100%;
+  width:100%;
+  position:fixed;
+  // background-color:$secondary-color;
 }
 
 .intro {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
-  letter-spacing: 2px;
   text-align: center;
-  padding: 1rem;
-  height: 40%;
+  align-items: center;
+  letter-spacing: 3px;
+  height:40%;
+  border-radius: 5px;
 
   &--heading {
+    font-family: "Oleo Script", cursive;
     color: $primary-color;
-    text-shadow: .25vw .25vw 0vw black;
-    // -.15vw -.05vw 0vw black,
-    // -.15vw -.05vw .5vw black,
-    // -.1vw -.06vw .5vw black,
-    // ;
-    // filter: drop-shadow(-2px 2px 0px rgba(0, 0, 0, 0.583));
-    font-size: 3.75vw;
+    font-style:italic;
+    text-shadow: .25vw .25vw 0vw black,
+      -.15vw -.05vw 0vw black,
+      -.15vw -.05vw .1vw black,
+      -.1vw -.06vw .1vw black,
+    ;
+    font-size: 4.75vw;
   }
 
-  &--subheading {
-    color: $primary-color;
-    text-shadow: .15vw .15vw 0vw black;
-    font-size: 2vw;
-    
-  }
-  
+
   &--site-name {
-    font-family:"Oleo Script", cursive;
-    font-size: 6.5vw;
+    font-family: "Oleo Script", cursive;
+    font-size: 8.5vw;
     // font-style: italic;
-    filter: drop-shadow(-.5vw .35vw 0px black);
+    // box-shadow: 0px .35vw 10px 0px black;
+    filter:drop-shadow(2px 2px 2px black);
     color: $primary-color;
     text-shadow:
-      -.1vw 0px .5px black,
-      0px .1vw .5px black,
-      -.35vw .15vw 0px $secondary-color,
-      -.65vw .25vw 0px $accent-color-three,
-      -.95vw .5vw 0px $accent-color-two,
-      -1.15vw .75vw 0px black;
+    -.1vw 0px .5px black,
+    0px .1vw .5px black,
+    -.25vw .15vw 0px $secondary-color,
+    -.55vw .25vw 0px $accent-color-three,
+    -.75vw .5vw 0px $accent-color-two,
+    -1.05vw .75vw 0px black;
   }
 
+  &--tagline{
+    font-family: "Oleo Script", cursive;
+    font-size:4vw;
+    font-style:italic;
+    color:$primary-color;
+    text-shadow: .15vw .15vw 0vw black,
+      -.1vw -.05vw 0.2vw black,
+      -.1vw -.05vw .1vw black,
+      -.1vw -.05vw .5vw black,
+      -.1vw -.05vw .6vw black,
+    ;
+  }
+  
+  
 }
 
+.brief {
+  // font-family: "Lobster Two", cursive;
+  background-color:black;
+  color:$primary-color;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+	margin: 0 auto;
+  font-style:italic;
+  letter-spacing: 1px;
+	font-size: 2.2vw;
+	width: 80%;
+	display: flex;
+	text-align: center;
 
-.browse-wrapper {
-  border: 102px dodgerblue;
-  font-size: 2.5vw;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-
-  &--coffee-btn,
-  &--tea-btn {
-    color: $primary-color;
-    box-shadow: 7px 5px 0px 3px #2d2d2d;
-    text-shadow: .25vw 0px 0px black;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: .2rem 1rem;
-    transition: all 50ms ease;
-    cursor: pointer;
-
-    &:active {
-      transform: translateY(3px);
-      box-shadow: 3px 2px 0px 2px black;
-    }
-
-  }
-
-  &--coffee-btn {
-    background-color: #a47c6c;
-  }
-
-  &--tea-btn {
-    background-color: #7ea46c;
+  // text-align:justify;
+  text-shadow: .02vw .02vw 0vw black,
+    -.1vw -.05vw .2vw black,
+    -.1vw -.05vw .3vw black,
+    -.1vw -.05vw .4vw black;
+  &--top{
+    
   }
 }
+
+// .browse-wrapper {
+//   border: 102px dodgerblue;
+//   font-size: 2.5vw;
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: space-evenly;
+
+//   &--coffee-btn,
+//   &--tea-btn {
+//     color: $primary-color;
+//     box-shadow: 7px 5px 0px 3px #2d2d2d;
+//     text-shadow: .25vw 0px 0px black;
+//     border: 2px solid black;
+//     border-radius: 10px;
+//     padding: .2rem 1rem;
+//     transition: all 50ms ease;
+//     cursor: pointer;
+
+//     &:active {
+//       transform: translateY(3px);
+//       box-shadow: 3px 2px 0px 2px black;
+//     }
+
+//   }
+
+//   &--coffee-btn {
+//     background-color: #a47c6c;
+//   }
+
+//   &--tea-btn {
+//     background-color: #7ea46c;
+//   }
+// }

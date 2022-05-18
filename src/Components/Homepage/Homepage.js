@@ -1,18 +1,16 @@
 import './Homepage.scss'
-import { Link } from 'react-router-dom';
 
 const Homepage = () => {
   return (
     <div className="homepage">
       <div className="intro">
-        <p className="intro--heading">Hey there hot stuff, welcome to</p>
-        <h1 className="intro--site-name">Blends With Benefits</h1>
+        <p className="intro--site-name">Blends With Benefits</p>
+        <h2 className="intro--tagline">The coffee and tea shop that grinds so fine.</h2>
       </div>
-      <div className="browse-wrapper">
-        <button className="browse-wrapper--coffee-btn"><Link to="/shop/coffee">Browse Coffee</Link></button>
-        <button className="browse-wrapper--tea-btn"><Link to="/shop/tea">Browse Tea</Link></button>
+      <div className="brief">
+        <p className="brief--one">The daily grind can be exhausting, but we're here to help you take life one cup at a time.</p>
+        <p className="brief--two">So take a deep breath, embrace your inner tranquili-tea, and enjoy our site that was brewed espresso-ly for you with a whole latté love.</p>
       </div>
-
     </div>
   )
 
