@@ -65,7 +65,21 @@
     font-size:2vw;
     color:$primary-color;
   }
-  
-  
+
 }
 
+@media screen and (max-width: 1000px){
+
+  .intro-container{
+    margin-top: 1rem;
+  }
+  .intro{
+    &--site-name{
+      font-size: 13.5vw;
+    }
+    &--tagline{
+      font-size: 5vw;
+    }
+
+  }
+}
