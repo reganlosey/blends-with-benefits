@@ -5,20 +5,19 @@
   max-height: 95vh;
   justify-content: center;
   flex-flow: row wrap;
+  padding:1.5rem 0;
 }
 
 
 .cart-card {
-  min-width: 75%;
-  min-height: 85vh;
+  min-width: 60%;
+  max-height: 80vh;
   border-radius: 10px;
   outline: 2px solid black;
   background-color: $primary-color;
   color: black;
   font-size: 1.25rem;
   padding: 1rem;
-  margin:1rem 0;
-
 
 
   &--cart-header {
@@ -31,9 +30,8 @@
 .cart-content-container {
   border: 2px solid black;
   border-radius: 10px;
-  min-height: 90%;
   width: 75%;
-  max-height: 65%;
+  height: 75%;
   overflow-y: scroll;
   overflow-x: auto;
   float: left;
@@ -41,7 +39,7 @@
 
 .empty-txt {
   text-align: center;
-  font-size:2vw;
+  font-size: 2.5vw;
   margin-top: 20%;
 }
 
@@ -163,6 +161,14 @@
   }
 }
 
-.cart-totals {
-  text-align: center;
+
+@media screen and (max-width:1000px) {
+  .cart-card {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  .cart-sidebar{
+    justify-content:unset;
+  }
 }
