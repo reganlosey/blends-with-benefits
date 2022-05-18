@@ -2,40 +2,27 @@
 
 .header {
   display: flex;
-  letter-spacing: .075vw;
+  letter-spacing: 1px;
   width: 100%;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.25em;
   padding: 0 .35rem;
 }
 
-.header-left {
-  float: left;
-}
-
-
-.header-center {
-  display: flex;
-  flex-flow: row nowrap;
-  margin: 0 auto;
-}
-
+.header-left,
+.header-center,
 .header-right {
-  float: right;
+  display: flex;
 }
 
-.site-logo {
-  max-width: 11vh;
-  border-radius: 10px;
-  filter: drop-shadow(1px 1px 1px black)
-}
+
 
 .home-link {
   font-family: "Oleo Script", cursive;
   color: $primary-color;
   font-size: 2.5rem;
+  filter: drop-shadow(1px 1px 1px black);
   text-shadow:
     -.1vw 0px .5px black,
     0px .1vw .5px black,
@@ -67,9 +54,6 @@
   &--coffee {
     background-color: #a47c6c;
 
-    &:hover {
-      background-color: #a47c6c;
-    }
   }
 
   &--tea {
@@ -85,7 +69,8 @@
     color: black;
     background-color: $accent-color-three;
   }
-  &--shop{
+
+  &--shop {
     background-color: #53917f;
   }
 }

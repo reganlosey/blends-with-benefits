@@ -24,7 +24,7 @@ const Shop = ({ addToCart }) => {
     } else if (!params.query && !arr.includes(brewCard)) {
       arr.push(brewCard)
     } else {
-      // navigate('/*')
+
     }
     return arr
   }, [])

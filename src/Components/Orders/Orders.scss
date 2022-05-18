@@ -71,8 +71,6 @@
   border-radius: 10px;
   overflow: auto;
   flex-flow: column nowrap;
-  // justify-content: center;
-  // align-items: center;
   margin: .75rem;
   padding: 1rem;
 }
@@ -83,11 +81,7 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  // border: 3px solid;
   margin: .5% 0;
-  // width: 75%;
-  // max-height: 100%;
-  // padding: 1rem 0;
   border-radius: 5px;
 
   &--item-icon {
