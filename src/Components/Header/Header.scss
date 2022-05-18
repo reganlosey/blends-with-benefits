@@ -33,6 +33,7 @@
 }
 
 .home-link {
+  font-family: "Oleo Script", cursive;
   color: $primary-color;
   font-size: 2.5rem;
   text-shadow:
@@ -83,5 +84,8 @@
   &--orders {
     color: black;
     background-color: $accent-color-three;
+  }
+  &--shop{
+    background-color: #53917f;
   }
 }
