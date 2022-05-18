@@ -2,19 +2,20 @@
 
 .orders {
   display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
+  max-height: 95vh;
+  justify-content: center;
+  flex-flow: row wrap;
   position:fixed;
   width:100%;
+  height:100%;
 }
 
 .order-card-container {
   background-color: $primary-color;
   min-width: 75%;
-  max-height: 85%;
+  height: 85%;
   border-radius: 10px;
-  outline: 2px solid white;
-  box-shadow: 5px 5px 20px rgb(0, 0, 0);
+  outline: 2px solid rgb(0, 0, 0);
   color: black;
   font-size: 1.25rem;
   padding: 1rem;
@@ -24,9 +25,14 @@
   &--header {
     font-size: 2rem;
     text-align:center;
+    text-decoration:underline;
   }
 }
-
+.empty-orders-txt{
+  font-size: 2vw;
+  margin-top:15%;
+  text-align:center;
+}
 
 .order-card {
   display: flex;
@@ -38,12 +44,6 @@
   border-radius: 10px;
   padding: 2.5rem 1rem;
   outline: 2px solid black;
-
-  &--header {
-    // display: flex;
-    // flex-flow: row wrap;
-    // align-items: flex-end;
-  }
 
   &--date-and-total {
     color: #5b5b5b;
