@@ -32,7 +32,6 @@
   flex-flow: column nowrap;
   border: 2px solid black;
   border-radius: 10px;
-  width: 75%;
   height: 75%;
   overflow-y: scroll;
   overflow-x: auto;
@@ -119,7 +118,7 @@
 
 
 .cart-sidebar {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   padding: 1rem;
   line-height:1.6;
   float:right;
@@ -127,7 +126,8 @@
 
 .cart-totals{
   &--final-total{
-    font-size:1.25rem;
+    font-size:1.5rem;
+    font-weight:400;
     text-decoration:underline;
   }
 }
@@ -183,7 +183,7 @@
     font-size:.85em;
 
     &--item-icon{
-      max-width:10.5vw;
+      width: 3.5rem;
     }
   }
 
