@@ -131,9 +131,9 @@ const Cart = () => {
             <p className="cart-totals--subtotal">Subtotal: {formatPrice(subTotal)}</p>
             <p className="cart-totals--shipping">Shipping: {shippingCost ? formatPrice(shippingCost) : "Free!"}</p>
             <p className="cart-totals--tax">Tax: {formatPrice(subTotal * .08)}</p>
+            <p className="cart-totals--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
           </div>
           <div className="place-order">
-            <p className="place-order--final-total">Total: {formatPrice(subTotal + (subTotal * 0.08) + shippingCost)}</p>
             <button
               className="place-order--btn"
               disabled={subTotal ? false : true}
