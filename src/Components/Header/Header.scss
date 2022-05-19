@@ -1,12 +1,10 @@
 @use '../../sass/variables'as *;
+@use '../../sass/mixins'as *;
 
 .header {
-  display: flex;
+  @include flex-container(flex, row nowrap, center, space-between);
   letter-spacing: 1px;
   width: 100%;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 .35rem;
 }
 

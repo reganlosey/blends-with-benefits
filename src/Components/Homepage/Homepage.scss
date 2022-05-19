@@ -1,32 +1,27 @@
 @use '../../sass/variables.scss'as *;
+@use '../../sass/mixins'as *;
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 
 .homepage {
   color: black;
-  height:100%;
-  width:100%;
-  position:fixed;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 
 }
 
-.intro-container{
+.intro-container {
+  @include flex-container(flex, column nowrap, center, center);
   height: 65%;
   margin-top: 2.5rem;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
   text-align: center;
-  align-items: center;
 }
 
 .intro {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
+  @include flex-container(flex, column nowrap, center, center);
   text-align: center;
-  align-items: center;
   height: 95%;
   border-radius: 15px;
   background-color: black;
@@ -36,7 +31,7 @@
   &--heading {
     font-family: "Oleo Script", cursive;
     color: $primary-color;
-    font-style:italic;
+    font-style: italic;
     text-shadow: .25vw .25vw 0vw black,
       -.15vw -.05vw 0vw black,
       -.15vw -.05vw .1vw black,
@@ -49,35 +44,37 @@
   &--site-name {
     font-family: "Oleo Script", cursive;
     font-size: 8.5vw;
-    filter:drop-shadow(2px 2px 2px black);
+    filter: drop-shadow(2px 2px 2px black);
     color: $primary-color;
     text-shadow:
-    -.1vw 0px .5px black,
-    0px .1vw .5px black,
-    -.25vw .15vw 0px $secondary-color,
-    -.55vw .25vw 0px $accent-color-three,
-    -.75vw .5vw 0px $accent-color-two,
-    -1.05vw .75vw 0px black;
+      -.1vw 0px .5px black,
+      0px .1vw .5px black,
+      -.25vw .15vw 0px $secondary-color,
+      -.55vw .25vw 0px $accent-color-three,
+      -.75vw .5vw 0px $accent-color-two,
+      -1.05vw .75vw 0px black;
   }
 
-  &--tagline{
+  &--tagline {
     font-family: "Hepta Slab", cursive;
-    font-size:2vw;
-    color:$primary-color;
+    font-size: 2vw;
+    color: $primary-color;
   }
 
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1000px) {
 
-  .intro-container{
+  .intro-container {
     margin-top: 1rem;
   }
-  .intro{
-    &--site-name{
+
+  .intro {
+    &--site-name {
       font-size: 13.5vw;
     }
-    &--tagline{
+
+    &--tagline {
       font-size: 5vw;
     }
 

@@ -1,4 +1,5 @@
 @use '../../sass/variables'as *;
+@use '../../sass/mixins'as *;
 
 .cart {
   display: flex;
@@ -33,7 +34,7 @@
   border: 2px solid black;
   border-radius: 10px;
   height: 75%;
-  min-width:65%;
+  min-width: 65%;
   overflow-y: scroll;
   overflow-x: auto;
   float: left;
@@ -46,10 +47,7 @@
 }
 
 .cart-item {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
+  @include flex-container(flex, row nowrap, center, space-between);
   padding: .5rem 1rem;
   border-bottom: 1px solid black;
   margin: .25rem;
@@ -61,9 +59,7 @@
 
 
 .item-details {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: flex-start;
+  @include flex-container(flex, column wrap, flex-start, unset);
   width: 25%;
   max-width: 30%;
   padding: 0 .5rem;
@@ -74,9 +70,7 @@
 }
 
 .cart-counter {
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
+  @include flex-container(flex, row wrap, center, space-around);
   min-width: 15%;
 
   &--increase-btn {
@@ -111,6 +105,7 @@
 .cart-prices {
   min-width: 10%;
   text-align: center;
+
   &--final-total {
     font-size: 1.5rem;
     text-decoration: underline;
@@ -121,34 +116,29 @@
 .cart-sidebar {
   font-size: 1.5rem;
   padding: 1rem;
-  line-height:1.6;
-  float:right;
+  line-height: 1.6;
+  float: right;
 }
 
-.cart-totals{
-  &--final-total{
-    font-size:1.5rem;
-    font-weight:400;
-    text-decoration:underline;
+.cart-totals {
+  &--final-total {
+    font-size: 1.75rem;
+    font-weight: 400;
+    text-decoration: underline;
   }
 }
 
 .place-order {
-  display: flex;
+  @include flex-container(flex, row nowrap, center, space-between);
   min-height: 20%;
-  // width: 100%;
-  flex-flow: row nowrap;
-  justify-content: space-between;
   text-align: center;
-  align-items: center;
-
 
   &--btn {
     background-color: $accent-color-three;
     border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
-    padding: .25rem .5rem;
+    padding: .25rem 1.5rem;
 
     &:disabled {
       cursor: not-allowed;
@@ -171,19 +161,17 @@
 
 @media screen and (max-width:1000px) {
   .cart-card {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
+    @include flex-container(flex, column nowrap, center, center);
 
     &--cart-header {
       font-size: 1.5rem;
     }
   }
-  .cart-item{
-    font-size:.85em;
 
-    &--item-icon{
+  .cart-item {
+    font-size: .85em;
+
+    &--item-icon {
       width: 2.5rem;
     }
   }
@@ -204,11 +192,9 @@
 }
 
 @media screen and (max-width:590px) {
-  .cart{
-    flex-flow:column nowrap;
+  .cart {
+    flex-flow: column nowrap;
   }
-  // .cart-item {
-  //   flex-flow: column nowrap;
-  // }
-  
+
+
 }
