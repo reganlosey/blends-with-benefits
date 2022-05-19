@@ -33,6 +33,7 @@
   border: 2px solid black;
   border-radius: 10px;
   height: 75%;
+  min-width:65%;
   overflow-y: scroll;
   overflow-x: auto;
   float: left;
@@ -46,7 +47,7 @@
 
 .cart-item {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
   padding: .5rem 1rem;
@@ -183,7 +184,7 @@
     font-size:.85em;
 
     &--item-icon{
-      width: 3.5rem;
+      width: 2.5rem;
     }
   }
 
@@ -206,8 +207,8 @@
   .cart{
     flex-flow:column nowrap;
   }
-  .cart-item {
-    flex-flow: column nowrap;
-    align-items: unset;
-  }
+  // .cart-item {
+  //   flex-flow: column nowrap;
+  // }
+  
 }
