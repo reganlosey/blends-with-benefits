@@ -4,12 +4,13 @@
   display: flex;
   flex-direction: column;
   text-shadow: 1px 0px 0px black;
+  padding: .5rem 1rem;
 }
 
 .brew-cards {
   padding: 1rem 0;
   display: grid;
-  margin: 0 auto;
+  justify-content: center;
   grid-gap: 2rem;
   grid-template-columns: repeat(3, minmax(20em, 25em));
   grid-auto-rows: minmax(15em, 18em);
@@ -18,6 +19,6 @@
 @media screen and (max-width: 900px) {
   .brew-cards {
     grid-template-columns: repeat(auto-fill, minmax(15em, 20em));
-    grid-template-rows: minmax(max-content, 20em);
+    grid-auto-rows: minmax(15em, 18em);
   }
 }

@@ -74,3 +74,22 @@
     background-color: #7f8bbb;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .header {
+    flex-flow: column wrap;
+    width: 100%;
+  }
+
+  .nav-link,
+  .nav-link-a {
+    font-size: 1rem;
+  }
+
+  .header-left,
+  .header-center,
+  .header-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

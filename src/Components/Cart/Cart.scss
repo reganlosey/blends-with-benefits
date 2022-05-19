@@ -5,20 +5,19 @@
   max-height: 95vh;
   justify-content: center;
   flex-flow: row wrap;
+  padding: 1.5rem 0;
 }
 
 
 .cart-card {
-  min-width: 75%;
-  min-height: 85vh;
+  min-width: 60%;
+  height: 70vh;
+  max-height: 80vh;
   border-radius: 10px;
   outline: 2px solid black;
   background-color: $primary-color;
-  color: black;
   font-size: 1.25rem;
   padding: 1rem;
-  margin:1rem 0;
-
 
 
   &--cart-header {
@@ -29,11 +28,11 @@
 
 
 .cart-content-container {
+  display: flex;
+  flex-flow: column nowrap;
   border: 2px solid black;
   border-radius: 10px;
-  min-height: 90%;
-  width: 75%;
-  max-height: 65%;
+  height: 75%;
   overflow-y: scroll;
   overflow-x: auto;
   float: left;
@@ -41,7 +40,7 @@
 
 .empty-txt {
   text-align: center;
-  font-size:2vw;
+  font-size: 2.5vw;
   margin-top: 20%;
 }
 
@@ -111,39 +110,44 @@
 .cart-prices {
   min-width: 10%;
   text-align: center;
+  &--final-total {
+    font-size: 1.5rem;
+    text-decoration: underline;
+  }
 }
 
 
 .cart-sidebar {
-  height: 90%;
   font-size: 1.5rem;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 1rem 0;
+  padding: 1rem;
+  line-height:1.6;
+  float:right;
+}
+
+.cart-totals{
+  &--final-total{
+    font-size:1.5rem;
+    font-weight:400;
+    text-decoration:underline;
+  }
 }
 
 .place-order {
   display: flex;
   min-height: 20%;
-  width: 100%;
-  flex-flow: column nowrap;
+  // width: 100%;
+  flex-flow: row nowrap;
   justify-content: space-between;
   text-align: center;
   align-items: center;
 
-  &--final-total {
-    font-size: 1.7rem;
-    text-decoration: underline;
-  }
 
   &--btn {
     background-color: $accent-color-three;
     border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
-    padding: .5rem 1.5rem;
+    padding: .25rem .5rem;
 
     &:disabled {
       cursor: not-allowed;
@@ -163,6 +167,47 @@
   }
 }
 
-.cart-totals {
-  text-align: center;
+
+@media screen and (max-width:1000px) {
+  .cart-card {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    &--cart-header {
+      font-size: 1.5rem;
+    }
+  }
+  .cart-item{
+    font-size:.85em;
+
+    &--item-icon{
+      width: 3.5rem;
+    }
+  }
+
+  .cart-sidebar {
+    font-size: 1rem;
+  }
+
+  .place-order {
+    font-size: 1rem;
+
+    &--final-total {
+      font-size: 1rem;
+
+    }
+  }
+
+}
+
+@media screen and (max-width:590px) {
+  .cart{
+    flex-flow:column nowrap;
+  }
+  .cart-item {
+    flex-flow: column nowrap;
+    align-items: unset;
+  }
 }
