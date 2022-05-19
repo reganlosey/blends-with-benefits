@@ -44,7 +44,7 @@ const Orders = () => {
     <div className="orders">
       <div className="order-card-container">
         <h3 className="order-card-container--header"> Your Orders</h3>
-        {allOrders.length ? orderCards : <p className="empty-orders-txt">Kind of lonely in here...</p>}
+        {allOrders.length ? orderCards : <p className="empty-orders-txt">Kind of lonely in here...We could be lonely together</p>}
       </div>
     </div>
 
