@@ -84,7 +84,7 @@ describe('Cart', () => {
       .should('contain', '$5.00')
       .get('.cart-totals--tax')
       .should('contain', '$0.80')
-      .get('.place-order--final-total')
+      .get('.cart-totals--final-total')
       .should('contain', '$15.80')
   })
 
