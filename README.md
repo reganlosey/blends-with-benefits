@@ -3,7 +3,6 @@
 ### [API](https://github.com/reganlosey/brewed_to_serve)
 
 <br>
-<br>
 
 <h2 style="text-decoration: underline">Overview:</h2>
 
