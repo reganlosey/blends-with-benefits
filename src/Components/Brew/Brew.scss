@@ -1,8 +1,9 @@
 @use '../../sass/variables.scss'as *;
+@use '../../sass/mixins'as *;
 
 
 .brew-card {
-  outline: 2px solid white;
+  border: 2px solid white;
   border-radius: 10px;
   padding: .5rem 0;
 
@@ -41,10 +42,8 @@
 
 .brew-info {
   height: 100%;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-around;
-  align-items: center;
+  @include flex-container(flex, column nowrap, center, space-around);
+
   color: $primary-color;
 
   &--name {
