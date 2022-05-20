@@ -6,7 +6,7 @@
 
 <h2 style="text-decoration: underline">Overview:</h2>
 
-## [Blends With Benefits](https://blendswithbenefits.netlify.app/), the coffee and tea shop that grinds so fine.
+## [Blends With Benefits](https://blendswithbenefits.netlify.app/).
 Hey there, hot stuff.
 The daily grind can be exhausting, but we're here to help you take life one cup at a time.
 So take a deep breath, embrace your inner tranquili-tea, and enjoy the shop that was brewed espresso-ly for you with a whole latté love.
