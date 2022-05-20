@@ -16,7 +16,7 @@ So take a deep breath, embrace your inner tranquili-tea, and enjoy the shop that
 
 Blends With Benefits is an ecommerce-style application that allows users to browse and purchase a variety of coffees and teas in bulk. The items stored in the cart and orders pages persist on refresh using the `redux-persist` library which rehydrates the Redux store with the data stored in the browser's local storage.
 
-This was a personal solo project and the first full-stack application I've built on my own. I wanted to keep up my momentum after graduating from Turing School Of Software and Design and this was an idea that I had been kicking around for awhile.
+This was a personal solo project and the first full-stack application I've built on my own. I wanted to keep up my momentum after graduating from Turing School Of Software and Design and this was an idea that I had been kicking around for awhile. I'm also a hopeless coffee addict and pun fanatic (ask me about my punny coffee tattoo!) which was the inspiration for this project.
 This repository is the UI that interacts with the [API](https://github.com/reganlosey/brewed_to_serve) I previously built which serves the data for all of the coffee and tea objects.
 This was also a venture for me to gain some more experience implementing Redux for global state management across the application, which I had been wanting to dig into some more to avoid the pain of prop-passing. 
 I had a ton of fun working on this project and getting to interact with my own API after only having used 3rd party public API's was really cool.
