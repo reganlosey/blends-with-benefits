@@ -24,7 +24,7 @@ const Cart = () => {
 
   useEffect(() => {
     calculateTotals()
-  }, [subTotal, cartItems])
+  }, [cartItems])
 
   const calculateTotals = () => {
     const totals = cartItems.reduce((sum, item) => {
@@ -44,7 +44,6 @@ const Cart = () => {
   const adjustQuantity = (e, id) => {
     e.preventDefault()
     const adjustment = cartItems.forEach((brew) => {
-      console.log(id)
       const matchedBrew = brew.id === id
       if (e.target.className.includes('increase') && matchedBrew) {
         dispatch(addItemToCart({
