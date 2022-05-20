@@ -26,12 +26,12 @@ I had a ton of fun working on this project and getting to interact with my own A
 
 
 ### Technologies Used:
-- React.js
-- Redux.js
-- Cypress
-- Javascript
-- SCSS
-- HTML
+- <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
+- <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white"/>
+- <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e"/>
+- <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+- <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white"/>
+- <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
 
 ## Site Images: 
 <img src="https://user-images.githubusercontent.com/82983696/169575437-e24aa227-b1b2-4170-991b-9fffd5dcaeb3.png"  width="800">
