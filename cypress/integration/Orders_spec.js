@@ -3,7 +3,7 @@ describe('Orders', () => {
     cy.placeOrder()
   })
   it('should have a sample test', () => {
-    cy.url('eq', 'http://localhost:3000/orders/')
+    cy.url('eq', 'https://blendswithbenefits.netlify.app/cart/orders/')
   })
 
   it('should render an order card', () => {

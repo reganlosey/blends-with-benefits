@@ -2,7 +2,7 @@ Cypress.Commands.add('addToCart',() => {
   cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
         fixture: 'brews'
       })
-      .visit('http://localhost:3000/shop/')
+      .visit('https://blendswithbenefits.netlify.app/shop/')
   cy.get('.brew-cards')
       .children('.brew-card')
       .its('length')
@@ -13,14 +13,14 @@ Cypress.Commands.add('addToCart',() => {
           return
         }
       })
-      .visit('http://localhost:3000/cart/')
+      .visit('https://blendswithbenefits.netlify.app/cart/')
 })
 
 Cypress.Commands.add('clearCart', () => {
   cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
     fixture: 'brews'
   })
-  .visit('http://localhost:3000/cart/')
+  .visit('https://blendswithbenefits.netlify.app/cart/')
   cy.get('.cart-content-container')
   .children()
   .its('length')
@@ -40,8 +40,8 @@ Cypress.Commands.add('placeOrder', () => {
   cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
     fixture: 'brews'
   })
-  .visit('http://localhost:3000/cart/')
+  .visit('https://blendswithbenefits.netlify.app/cart/')
   cy.get('.place-order--btn')
   .click()
-  .visit('http://localhost:3000/orders/')
+  .visit('https://blendswithbenefits.netlify.app/orders/')
 })

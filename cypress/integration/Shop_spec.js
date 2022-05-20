@@ -3,7 +3,7 @@ describe('Shop', () => {
     cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
         fixture: 'brews'
       })
-      .visit('http://localhost:3000/shop/')
+      .visit('https://blendswithbenefits.netlify.app/shop/')
   })
 
   it('should have a sample test', () => {
@@ -25,7 +25,7 @@ describe('Shop', () => {
   })
 
   it('should only render tea cards on visit to shop/tea', () => {
-    cy.visit('http://localhost:3000/shop/tea')
+    cy.visit('https://blendswithbenefits.netlify.app/shop/tea')
       .get('.brew-cards')
       .children('.brew-card')
       .then(teaCards => expect(teaCards.length).to.eq(3))
