@@ -39,7 +39,6 @@ const App = () => {
     <div className="App">
       <Header />
       <Routes>
-        {/* <Route path="/*" element={<Homepage/>} /> */}
         <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<Shop allBrews={brewData} addToCart={addToCart} />} />
         <Route path="/shop/:query" element={<Shop allBrews={brewData} addToCart={addToCart} />} />
