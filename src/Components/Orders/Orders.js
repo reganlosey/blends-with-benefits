@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const Orders = () => {
   const allOrders = useSelector((state) => state.orders.allOrders)
-  const today = Math.floor(new Date / 90000000)
+  const today = Math.floor(new Date() / 90000000)
 
   const formatPrice = (price) => {
     return price.toLocaleString('en-US', {
@@ -31,7 +31,7 @@ const Orders = () => {
         {order.map((item) =>
           <div key={item.id}
             className="ordered-item">
-            <img className="ordered-item--item-icon" src={item.type === "Tea" ? teaCupIcon : coffeePotIcon} />
+            <img className="ordered-item--item-icon" src={item.type === "Tea" ? teaCupIcon : coffeePotIcon} alt=""/>
             <p className="ordered-item--item-name">{item.productName} ({item.quantity} lbs)</p>
           </div>)
         }
