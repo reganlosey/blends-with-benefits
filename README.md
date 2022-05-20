@@ -27,7 +27,7 @@ I had a ton of fun working on this project and getting to interact with my own A
 
 ### Technologies Used:
 - React.js
-- Redux
+- Redux.js
 - Cypress
 - Javascript
 - SCSS
