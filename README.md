@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+## [☕ Blends With Benefits 🍵](https://blendswithbenefits.netlify.app/), the coffee and tea shop that grinds so fine.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [API](https://github.com/reganlosey/brewed_to_serve)
 
-## Available Scripts
+<br>
+<br>
 
-In the project directory, you can run:
+<h2 style="text-decoration: underline">Overview:</h2>
 
-### `npm start`
+## [Blends With Benefits](https://blendswithbenefits.netlify.app/), the coffee and tea shop that grinds so fine.
+Hey there, hot stuff.
+The daily grind can be exhausting, but we're here to help you take life one cup at a time.
+So take a deep breath, embrace your inner tranquili-tea, and enjoy the shop that was brewed espresso-ly for you with a whole latté love.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Description
 
-### `npm test`
+Blends With Benefits is an ecommerce-style application that allows users to browse and purchase a variety of coffees and teas in bulk. The items stored in the cart and orders pages is persisted using the `redux-persist` library which rehydrates the Redux store with the data stored in the browser's local storage.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This was a personal solo project and the first full-stack application I've built on my own. I wanted to keep up my momentum after graduating from Turing School Of Software and Design and this was an idea that I had been kicking around for awhile.
+This repository is the UI that interacts with the API I previously built which serves the data for all of the coffee and tea objects.
+This was also a venture for me to gain some more experience implementing Redux for global state management across the application, which I had been wanting to dig into some more to avoid the pain of prop-passing. 
+I had a ton of fun working on this project and getting to interact with my own API after only having used 3rd party public API's was really cool.
 
-### `npm run build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Technologies Used:
+- React.js
+- Redux
+- Cypress
+- Javascript
+- SCSS
+- HTML
 
-### `npm run eject`
+## Site Images: 
+<img src="https://user-images.githubusercontent.com/82983696/169575437-e24aa227-b1b2-4170-991b-9fffd5dcaeb3.png"  width="800">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src="https://user-images.githubusercontent.com/82983696/169575175-feaaa7f5-45d9-4b56-b221-a84d37a55b18.png"  width="800">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="https://user-images.githubusercontent.com/82983696/169575153-5b14e59a-bd42-4cea-a093-7214da38f60e.png"  width="800">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<img src="https://user-images.githubusercontent.com/82983696/169575171-b15fa0a3-cdaa-48bc-91c9-14e83e06e6c1.png"  width="800">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Contributors: 
+[Regan Losey](https://github.com/reganlosey)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Future Iterations:
+1. Increase mobile responsiveness.
+2. Implement sorting and filtering by price, caffeinated, espresso/coffee, etc.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Resources: 
+- [Redux.js.org](https://redux.js.org/)
+- [Reduxtoolkit.js.org](https://redux-toolkit.js.org/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
