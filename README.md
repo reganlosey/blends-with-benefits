@@ -43,6 +43,8 @@ I had a ton of fun working on this project and getting to interact with my own A
 ## Testing Coverage Report:
 <img src="https://user-images.githubusercontent.com/82983696/169581677-1d354c89-3fb4-4151-8c76-45c742496579.png"  width="800">
 
+
+
 ### Contributors: 
 [Regan Losey](https://github.com/reganlosey)
 
@@ -51,9 +53,11 @@ I had a ton of fun working on this project and getting to interact with my own A
 1. Increase mobile responsiveness.
 2. Implement sorting and filtering by price, caffeinated, espresso/coffee, etc.
 
-
 ### Resources: 
 - [Redux.js.org](https://redux.js.org/)
 - [Reduxtoolkit.js.org](https://redux-toolkit.js.org/)
+
+#### Note: Because this application utilizes local storage, the browser's local storage must be cleared if you wish to reset the data. To do so, open your browser's developer tools and in the console, type `localStorage.clear()` and press enter.
+
 
 
