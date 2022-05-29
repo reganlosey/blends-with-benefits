@@ -40,7 +40,7 @@ I had a ton of fun working on this project and getting to interact with my own A
 
 <img src="https://user-images.githubusercontent.com/82983696/169575171-b15fa0a3-cdaa-48bc-91c9-14e83e06e6c1.png"  width="800">
 
-## Testing Coverage Report:
+## Cypress Testing Coverage Report:
 <img src="https://user-images.githubusercontent.com/82983696/169581677-1d354c89-3fb4-4151-8c76-45c742496579.png"  width="800">
 
 
