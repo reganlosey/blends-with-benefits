@@ -2,8 +2,6 @@
 
 ### [API](https://github.com/reganlosey/brewed_to_serve)
 
-<br>
-
 <h2 style="text-decoration: underline">Overview:</h2>
 
 ## [Blends With Benefits](https://blendswithbenefits.netlify.app/).
