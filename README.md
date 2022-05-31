@@ -41,7 +41,10 @@ I had a ton of fun working on this project and getting to interact with my own A
 ## Cypress Testing Coverage Report:
 <img src="https://user-images.githubusercontent.com/82983696/169581677-1d354c89-3fb4-4151-8c76-45c742496579.png"  width="800">
 
+## Wireframing/Planning:
+<img src="https://user-images.githubusercontent.com/82983696/171229146-0da9a2e3-82ec-4bb9-ae0c-b148c239f79d.png"  width="800">
 
+<img src="https://user-images.githubusercontent.com/82983696/171229583-bec547e8-f946-4cae-958e-83fabd814265.png"  width="800">
 
 ### Contributors: 
 [Regan Losey](https://github.com/reganlosey)
