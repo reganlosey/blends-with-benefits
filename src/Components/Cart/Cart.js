@@ -2,7 +2,7 @@ import './Cart.scss'
 import { useState, useEffect } from 'react';
 import { addItemToCart, removeItemFromCart, clearCart } from '../../redux/cartSlice';
 import { placeOrder } from '../../redux/orderSlice';
-import { useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import beansIcon from '../../assets/coffee-pot.svg';
 import teaBagIcon from '../../assets/tea-cup.svg';
 
