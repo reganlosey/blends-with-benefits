@@ -48,6 +48,28 @@ export const deleteFromCartAsync = createAsyncThunk(
   }
 )
 
+export const patchCartItemAsync = createAsyncThunk(
+  "/cart/items/patchCartItemAsync",
+  async (payload) => {
+    try {
+      const resp = await fetch(`http://localhost:3001/cart/${payload.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        },
+        body: JSON.stringify({
+          quantity: payload.quantity
+        })
+      })
+      const respJson = await resp.json()
+      return respJson
+    } catch (err) {
+      throw new Error({ error: err })
+    }
+  }
+)
+
 
 export const cartSlice = createSlice({
   name: 'cart',
@@ -63,6 +85,9 @@ export const cartSlice = createSlice({
       state.items = action.payload
     },
     [deleteFromCartAsync.fulfilled]: (state, action) => {
+      state.items = action.payload
+    },
+    [patchCartItemAsync.fulfilled]: (state, action) => {
       state.items = action.payload
     }
   },
