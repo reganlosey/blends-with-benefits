@@ -7,7 +7,7 @@ import Orders from './Components/Orders/Orders';
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getAllBrewsAsync } from './redux/brewSlice';
-import { addItemToCart, getCartAsync, addToCartAsync } from './redux/cartSlice';
+import { addItemToCart, getCartAsync, addToCartAsync, deleteFromCartAsync } from './redux/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {
@@ -26,6 +26,10 @@ const App = () => {
     }
     const respJson = await resp.json()
     setData(respJson)
+  }
+
+  const deleteCartItem = async () => {
+    dispatch(deleteFromCartAsync("190"))
   }
 
   const postToCart = async () => {
@@ -62,6 +66,7 @@ const App = () => {
       <Header />
       <button onClick={() => newFetch()}>CLICK</button>
       <button onClick={() => postToCart()}>POST</button>
+      <button onClick={() => deleteCartItem()}>DELETE</button>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<Shop allBrews={brewData} addToCart={addToCart} />} />

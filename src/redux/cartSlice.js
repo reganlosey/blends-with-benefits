@@ -33,6 +33,22 @@ export const addToCartAsync = createAsyncThunk(
   }
 )
 
+export const deleteFromCartAsync = createAsyncThunk(
+  'cart/items/deleteFromCartAsync',
+  async (id) => {
+    try {
+      await fetch(`http://localhost:3001/cart/${id}`, {
+        method: "DELETE",
+      }
+      )
+      // const respJson = resp.json()
+      // return respJson
+    } catch (err) {
+      throw new Error({ message: err.message })
+    }
+  }
+)
+
 
 export const cartSlice = createSlice({
   name: 'cart',
