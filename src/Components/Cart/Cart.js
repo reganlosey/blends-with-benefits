@@ -1,6 +1,6 @@
 import './Cart.scss'
 import { useState, useEffect } from 'react';
-import { addItemToCart, removeItemFromCart, clearCart } from '../../redux/cartSlice';
+import { addItemToCart, removeItemFromCart, clearCart, addToCartAsync } from '../../redux/cartSlice';
 import { placeOrder } from '../../redux/orderSlice';
 import { useSelector, useDispatch } from "react-redux";
 import beansIcon from '../../assets/coffee-pot.svg';
@@ -46,7 +46,7 @@ const Cart = () => {
     const adjustment = cartItems.forEach((brew) => {
       const matchedBrew = brew.id === id
       if (e.target.className.includes('increase') && matchedBrew) {
-        dispatch(addItemToCart({
+        dispatch(addToCartAsync({
           id: brew.id,
           productName: brew.productName,
           type: brew.type,

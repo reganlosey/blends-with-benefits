@@ -15,9 +15,9 @@ export const getCartAsync = createAsyncThunk(
 
 export const addToCartAsync = createAsyncThunk(
   'cart/items/addToCartAsync',
-  async (data) => {
+  (data) => {
     try {
-      const resp = await fetch("http://localhost:3001/cart", {
+      const resp = fetch("http://localhost:3001/cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -26,6 +26,7 @@ export const addToCartAsync = createAsyncThunk(
       }
       )
       const respJson = resp.json()
+      console.log(respJson)
       return respJson
     } catch (err) {
       throw new Error({ message: err.message })
@@ -41,10 +42,8 @@ export const deleteFromCartAsync = createAsyncThunk(
         method: "DELETE",
       }
       )
-      // const respJson = resp.json()
-      // return respJson
     } catch (err) {
-      throw new Error({ message: err.message })
+      throw Error({ message: err.message })
     }
   }
 )
@@ -62,26 +61,29 @@ export const cartSlice = createSlice({
     },
     [addToCartAsync.fulfilled]: (state, action) => {
       state.items = action.payload
+    },
+    [deleteFromCartAsync.fulfilled]: (state, action) => {
+      state.items = action.payload
     }
   },
   reducers: {
-    addItemToCart: (state, action) => {
-      const foundItem = state.items.find((item) => item.id === action.payload.id)
-      if (!foundItem) {
-        action.payload.quantity = 1
-        state.items = [...state.items, action.payload]
-      } else if (foundItem) {
-        foundItem.quantity += 1;
-      }
-    },
-    removeItemFromCart: (state, action) => {
-      const foundItem = state.items.find((item) => item.id === action.payload.id)
-      if (foundItem && foundItem.quantity > 1) {
-        foundItem.quantity -= 1
-      } else if (foundItem.quantity === 1) {
-        state.items.splice(foundItem, 1)
-      }
-    },
+    //   addItemToCart: (state, action) => {
+    //     const foundItem = state.items.find((item) => item.id === action.payload.id)
+    //     if (!foundItem) {
+    //       action.payload.quantity = 1
+    //       state.items = [...state.items, action.payload]
+    //     } else if (foundItem) {
+    //       foundItem.quantity += 1;
+    //     }
+    //   },
+    //   removeItemFromCart: (state, action) => {
+    //     const foundItem = state.items.find((item) => item.id === action.payload.id)
+    //     if (foundItem && foundItem.quantity > 1) {
+    //       foundItem.quantity -= 1
+    //     } else if (foundItem.quantity === 1) {
+    //       state.items.splice(foundItem, 1)
+    //     }
+    //   },
     clearCart: (state, action) => {
       state.items = []
     }

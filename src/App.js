@@ -17,6 +17,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getAllBrewsAsync());
+    dispatch(getCartAsync())
   }, [dispatch])
 
   const newFetch = async () => {
