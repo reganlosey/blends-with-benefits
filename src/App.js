@@ -7,26 +7,38 @@ import Orders from './Components/Orders/Orders';
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getAllBrewsAsync } from './redux/brewSlice';
-import { addItemToCart } from './redux/cartSlice';
+import { addItemToCart, getCartAsync, addToCartAsync } from './redux/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {
   const dispatch = useDispatch()
-  // const [newData, setData] = useState([])
+  const [newData, setData] = useState([])
   const brewData = useSelector((state) => state.brews.allBrews)
 
   useEffect(() => {
     dispatch(getAllBrewsAsync());
   }, [dispatch])
 
-  // const newFetch = async () => {
-  //   const resp = await fetch('https://brewed-to-serve-api.herokuapp.com/brews')
-  //   if (!resp.ok) {
-  //     throw new Error(`Err: ${resp.status}`)
-  //   }
-  //   const respJson = await resp.json()
-  //   setData(respJson)
-  // }
+  const newFetch = async () => {
+    const resp = await fetch('http://localhost:3001/cart')
+    if (!resp.ok) {
+      throw new Error(`Err: ${resp.status}`)
+    }
+    const respJson = await resp.json()
+    setData(respJson)
+  }
+
+  const postToCart = async () => {
+    const newCartItem = {
+      id: 190,
+      productName: "Brazilian Arabica",
+      type: "Coffee",
+      price: 10, hasCaffeine: true, quantity: 0
+
+    }
+    dispatch(addToCartAsync(newCartItem))
+  }
+
 
   const addToCart = (id) => {
     const clicked = brewData.find(item => item.id === id)
@@ -48,7 +60,8 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      {/* <button onClick={() => newFetch()}>CLICK</button> */}
+      <button onClick={() => newFetch()}>CLICK</button>
+      <button onClick={() => postToCart()}>POST</button>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<Shop allBrews={brewData} addToCart={addToCart} />} />
