@@ -1,8 +1,8 @@
 import './Cart.scss'
 import { useState, useEffect } from 'react';
-import { addItemToCart, removeItemFromCart, clearCart } from '../../redux/cartSlice';
+import { addItemToCart, deleteFromCartAsync, clearCart, addToCartAsync, getCartAsync } from '../../redux/cartSlice';
 import { placeOrder } from '../../redux/orderSlice';
-import { useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import beansIcon from '../../assets/coffee-pot.svg';
 import teaBagIcon from '../../assets/tea-cup.svg';
 
@@ -46,7 +46,7 @@ const Cart = () => {
     const adjustment = cartItems.forEach((brew) => {
       const matchedBrew = brew.id === id
       if (e.target.className.includes('increase') && matchedBrew) {
-        dispatch(addItemToCart({
+        dispatch(addToCartAsync({
           id: brew.id,
           productName: brew.productName,
           type: brew.type,
@@ -56,14 +56,7 @@ const Cart = () => {
         }))
         calculateTotals()
       } else if (e.target.className.includes('decrease') && brew.quantity > 0 && matchedBrew) {
-        dispatch(removeItemFromCart({
-          id: brew.id,
-          productName: brew.productName,
-          type: brew.type,
-          price: brew.price,
-          hasCaffeine: brew.hasCaffeine,
-          quantity: brew.quantity
-        }))
+        dispatch(deleteFromCartAsync(brew.id))
         calculateTotals()
       }
     })
@@ -123,7 +116,7 @@ const Cart = () => {
           Your Cart
         </h3>
         <div className="cart-content-container">
-          {cartItems.length ? allItems : <p className="empty-txt">Your cart's looking a little...emp-tea</p>}
+          {cartItems ? allItems : <p className="empty-txt">Your cart's looking a little...emp-tea</p>}
         </div>
         <div className="cart-sidebar">
           <div className="cart-totals">

@@ -4,19 +4,54 @@ import Header from './Components/Header/Header';
 import Shop from './Components/Shop/Shop';
 import Cart from './Components/Cart/Cart';
 import Orders from './Components/Orders/Orders';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getAllBrewsAsync } from './redux/brewSlice';
-import { addItemToCart } from './redux/cartSlice';
+import { addItemToCart, getCartAsync, addToCartAsync, deleteFromCartAsync, patchCartItemAsync } from './redux/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {
   const dispatch = useDispatch()
+  const [newData, setData] = useState([])
   const brewData = useSelector((state) => state.brews.allBrews)
 
   useEffect(() => {
     dispatch(getAllBrewsAsync());
+    dispatch(getCartAsync())
   }, [dispatch])
+
+  const newFetch = async () => {
+    const resp = await fetch('http://localhost:3001/cart')
+    if (!resp.ok) {
+      throw new Error(`Err: ${resp.status}`)
+    }
+    const respJson = await resp.json()
+    setData(respJson)
+  }
+
+  const deleteCartItem = async () => {
+    dispatch(deleteFromCartAsync("190"))
+  }
+
+  const patchItem = async () => {
+    const updated = {
+      id: 190,
+      quantity: 11
+    }
+    dispatch(patchCartItemAsync(updated))
+  }
+
+  const postToCart = async () => {
+    const newCartItem = {
+      id: 190,
+      productName: "Brazilian Arabica",
+      type: "Coffee",
+      price: 10, hasCaffeine: true, quantity: 0
+
+    }
+    dispatch(addToCartAsync(newCartItem))
+  }
+
 
   const addToCart = (id) => {
     const clicked = brewData.find(item => item.id === id)
@@ -38,6 +73,10 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <button onClick={() => newFetch()}>CLICK</button>
+      <button onClick={() => postToCart()}>POST</button>
+      <button onClick={() => deleteCartItem()}>DELETE</button>
+      <button onClick={() => patchItem()}>PATCH</button>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<Shop allBrews={brewData} addToCart={addToCart} />} />

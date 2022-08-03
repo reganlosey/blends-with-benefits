@@ -5,7 +5,7 @@ export const getAllBrewsAsync = createAsyncThunk(
   'brews/allBrews/getBrewsAsync',
   async () => {
     try {
-      const resp = await fetch("https://brewedtoserve.herokuapp.com/brews")
+      const resp = await fetch("https://brewed-to-serve-api.herokuapp.com/brews")
       if (resp.ok) {
         const brews = await resp.json()
         return brews
