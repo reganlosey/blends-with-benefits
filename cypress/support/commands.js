@@ -1,5 +1,5 @@
 Cypress.Commands.add('addToCart',() => {
-  cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
+  cy.intercept('https://brewed-to-serve.onrender.com/brews', {
         fixture: 'brews'
       })
       .visit('https://blendswithbenefits.netlify.app/shop/')
@@ -17,7 +17,7 @@ Cypress.Commands.add('addToCart',() => {
 })
 
 Cypress.Commands.add('clearCart', () => {
-  cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
+  cy.intercept('https://brewed-to-serve.onrender.com/brews', {
     fixture: 'brews'
   })
   .visit('https://blendswithbenefits.netlify.app/cart/')
@@ -37,7 +37,7 @@ Cypress.Commands.add('clearCart', () => {
 
 Cypress.Commands.add('placeOrder', () => {
   cy.addToCart()
-  cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
+  cy.intercept('https://brewed-to-serve.onrender.com/brews', {
     fixture: 'brews'
   })
   .visit('https://blendswithbenefits.netlify.app/cart/')
