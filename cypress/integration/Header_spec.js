@@ -1,6 +1,6 @@
 describe("Header", () => {
   beforeEach(() => {
-    cy.intercept('https://brewedtoserve.herokuapp.com/brews', {
+    cy.intercept('https://brewed-to-serve.onrender.com/brews', {
         fixture: 'brews'
       })
       .visit('https://blendswithbenefits.netlify.app/')
